@@ -1,0 +1,89 @@
+/* line 4, ../scss/typography.scss */
+.page-title {
+  margin-bottom: 20px;
+  padding: 10px;
+  padding-left: 30px;
+  border: none;
+  border: 1px solid #ccc;
+  background-image: -webkit-linear-gradient(top, #eee 0%, #fff 100%);
+  background-image: -o-linear-gradient(top, #eee 0%, #fff 100%);
+  background-image: linear-gradient(to bottom, #eeeeee 0%, #ffffff 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFEEEEEE', endColorstr='#FFFFFFFF', GradientType=0);
+}
+/* line 15, ../scss/typography.scss */
+.page-title:before {
+  content: "";
+  background-color: #0288d1;
+  width: 7px;
+  height: 1.1em;
+  position: absolute;
+  margin-left: -18px;
+}
+
+/* line 24, ../scss/typography.scss */
+img.pull-left {
+  margin: 0 10px 10px 0;
+}
+
+/* line 27, ../scss/typography.scss */
+img.pull-right {
+  margin: 0 0 10px 10px;
+}
+
+/* line 30, ../scss/typography.scss */
+p {
+  color: #727272;
+  line-height: 1.8;
+}
+
+/* line 34, ../scss/typography.scss */
+h1 {
+  border-bottom: 1px solid #78909C;
+  border-left: 10px solid #78909C;
+  padding: 5px 10px;
+}
+
+/* line 39, ../scss/typography.scss */
+h2 {
+  border-left: 8px solid #78909C;
+  padding: 5px 10px;
+}
+
+/* line 43, ../scss/typography.scss */
+h3 {
+  border-bottom: 1px solid #78909C;
+  padding: 5px 10px;
+}
+
+/* line 50, ../scss/typography.scss */
+.my-table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+/* line 54, ../scss/typography.scss */
+.my-table th, .my-table td {
+  border: 1px solid #78909C;
+  padding: 8px;
+  line-height: 1.5;
+  vertical-align: top;
+}
+/* line 60, ../scss/typography.scss */
+.my-table tbody + tbody {
+  border-top: 2px solid #78909C;
+}
+/* line 63, ../scss/typography.scss */
+.my-table tr:nth-of-type(odd) {
+  background-color: #eee;
+}
+
+/* line 67, ../scss/typography.scss */
+.table-responsive {
+  overflow-x: auto;
+}
+
+/* line 85, ../scss/typography.scss */
+table caption {
+  padding-bottom: 0;
+}

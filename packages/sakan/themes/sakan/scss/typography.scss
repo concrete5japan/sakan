@@ -1,0 +1,102 @@
+@import "var";
+@import "compass";
+//メインコンテンツ
+.page-title{
+	margin-bottom: 20px;
+	padding: 10px;
+	padding-left: 30px;
+	border: none;
+	border: 1px solid #ccc;
+  background-image: -webkit-linear-gradient(top, #eee 0%, #fff 100%);
+  background-image: -o-linear-gradient(top, #eee 0%, #fff 100%);
+  background-image: linear-gradient(to bottom, #eee 0%, #fff 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFEEEEEE', endColorstr='#FFFFFFFF', GradientType=0);
+	&:before {
+		content: "";
+		background-color: #0288d1;
+		width: 7px;
+		height: 1.1em;
+		position: absolute;
+		margin-left: -18px;
+	}
+}
+img.pull-left{
+	margin: 0 10px 10px 0;
+}
+img.pull-right{
+	margin: 0 0 10px 10px;
+}
+p{
+	color: $def-text;
+	line-height: 1.8;
+}
+h1{
+	border-bottom: 1px solid $my-accent;
+	border-left: 10px solid $my-accent;
+	padding: 5px 10px;
+}
+h2{
+	border-left: 8px solid $my-accent;
+	padding: 5px 10px;
+}
+h3{
+	border-bottom: 1px solid $my-accent;
+	padding: 5px 10px;
+}
+div{
+	
+}
+.my-table{
+	width: 100%;
+	max-width: 100%;
+	margin-bottom: 20px;
+	th,td{
+	border: 1px solid $my-accent;
+	padding: 8px;
+	line-height: 1.5;
+	vertical-align: top;
+	}
+	tbody + tbody {
+		border-top: 2px solid $my-accent;
+	}
+	tr:nth-of-type(odd){
+		background-color: #eee;
+	}
+}
+.table-responsive{
+	overflow-x: auto;
+}
+.table-bordered{
+	
+}
+.table-striped{
+	
+}
+.table-hover{
+}
+.active{}
+.success{}
+.warning{}
+.danger{}
+.info{}
+
+table{
+	caption{
+		padding-bottom: 0;
+	}
+	tbody{
+		
+	}
+	tr{
+		th{
+		}
+		td{
+			
+		}
+	}
+}
+
+address{
+	
+}
