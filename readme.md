@@ -5,7 +5,9 @@ Sakan means plasterwork in Japanese. As Sakan glue concrete blocks into one hous
 This is Bootstrap 3 based responsive concrete5 website
 
 
-# コンセプト
+# Sakan とは
+
+## コンセプト
 
 concrete5.7 で簡単にサイト作成が出来るよう、日本人向けに作成するベーステーマです。
 
@@ -18,3 +20,18 @@ concrete5.7 で簡単にサイト作成が出来るよう、日本人向けに�
     - お問い合わせフォーム (確認ページ付き)
 - 権限
     - 普通
+    
+
+# Credit
+
+Katz Ueno @katzueno
+Hayaka Shoji @miz563
+Shinji Sakai @shin2
+Hiroyasu Yamada @hiroyasu55
+Fumito MIZUNO @ounziw
+Student: @kanda025o
+Yoji  Izumi @YojiIzumi
+Yuko Oikawa @01kawa
+Takeshi Ando @andotake3
+Naoki Soneda @sonedanaoki
+Mignon Style @mignonstyle (Mizue Imai)
