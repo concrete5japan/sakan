@@ -34,4 +34,4 @@ concrete5.7 で簡単にサイト作成が出来るよう、日本人向けに�
 - Yuko Oikawa @01kawa
 - Takeshi Ando @andotake3
 - Naoki Soneda @sonedanaoki
-- Mignon Style @mignonstyle (Mizue Imai)
+- Mignon Style @mignonstyle
