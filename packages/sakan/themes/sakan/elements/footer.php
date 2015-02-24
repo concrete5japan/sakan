@@ -1,41 +1,80 @@
-<?php  defined('C5_EXECUTE') or die(_("Access Denied.")); ?>
-	<footer>
-		<div id="footArea">
-			<div class="container">
-				<h1 class="foot-heading">学校法人渋谷学園　道玄坂大学</h1>
-				<div class="row">
-					<div class="col-sm-9">
-						<?php 
-						$a = new GlobalArea('footer_navi');
-						$a->display($c);
-						?>
-					</div>
-					<div class="col-sm-3">
-						<a href="#"><img src="<?php echo $this->getThemePath();?>/images/dogenzaka_univ_logo.png" alt="学校法人渋谷学園道玄坂大学" class="logo img-responsive center-block" width="150"></a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div id="copyArea">
-			<div class="container">
-				<div class="pull-right">
-					<a href="#"><i class="fa fa-instagram"></i></a>
-					<a href="#"><i class="fa fa-facebook"></i></a>
-					<a href="#"><i class="fa fa-twitter"></i></a>
-				</div>
-				<div>
-					&copy 2015 Dogenzaka University.
-				</div>
-			</div>
-		</div>
-	</footer>
-	<?php global $cp;
-	$canViewToolbar = (isset($cp) && is_object($cp) && $cp->canViewToolbar());
-	if (!$c->isEditMode()) {?>
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-		<script src="<?php echo $this->getThemePath();?>/js/bootstrap.min.js"></script>
-	<?php } ?>
-	<?php  Loader::element('footer_required'); ?>
+<?php
+use Concrete\Core\Validation\CSRF\Token;
+defined('C5_EXECUTE') or die("Access Denied."); ?>
+
+<!-- FOOTER -->
+<footer>
+ <div id="footArea">
+  <div class="container">
+                <?php
+                  $a = new GlobalArea('Footer Site Title');
+                  $a->display($c);
+                ?>
+   <div class="row">
+    <div class="col-sm-9">
+                <?php
+                  $a = new GlobalArea('Footer Navigation');
+                  $a->display($c);
+                ?>
+    </div><!-- /.col-sm-9 -->
+    <div class="col-sm-3">
+                <?php
+                  $a = new GlobalArea('Footer Contact');
+                  $a->display($c);
+                ?>
+    </div><!-- /.col-sm-3 -->
+   </div><!-- /.row -->
+  </div><!-- /.container -->
+ </div><!-- /#footArea -->
+      
+ <div id="copyArea">
+  <div class="container">
+   <div class="row">
+    <div class="col-sm-9">
+                <?php
+                  $a = new GlobalArea('Footer Legal');
+                  $a->display($c);
+                ?>
+
+                <p><?php echo t('Built with <a href="http://www.concrete5.org" class="concrete5">concrete5</a> CMS.')?>
+                
+                    <?php
+                    if (!id(new User)->isLoggedIn()) {
+                        ?>
+                        <a href="<?php echo URL::to('/login')?>">
+                            <?php echo t('Log in') ?>
+                        </a>
+                        <?php
+                    } else {
+                        $token = new Token();
+                        ?>
+                        <form action="<?php echo URL::to('/login', 'logout') ?>">
+                            <?php id(new Token())->output('logout'); ?>
+                            <a href="#" onclick="$(this).closest('form').submit();return false">
+                                <?php echo t('Log out') ?>
+                            </a>
+                        </form>
+                        <?php
+                    }
+                    ?>
+                </p>
+
+    </div><!-- /.col-sm-9 -->
+    <div class="col-sm-3">
+                <?php
+                  $a = new GlobalArea('Footer Social');
+                  $a->display($c);
+                ?>
+    </div><!-- /.col-sm-3 -->
+   </div><!-- /.row -->
+  </div><!-- /.container -->
+ </div><!-- /.copyArea -->
+</footer>
+
+</div><!-- /getPageWrapperClass -->
+
+
+<?php Loader::element('footer_required'); ?>
 </body>
 </html>
+

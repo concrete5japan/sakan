@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<schema version="0.3">
+
+	<table name="btManualNav">
+		<field name="bID" type="I"><key /><unsigned /></field>
+		<field name="dummy" type="C" size="10"></field>
+	</table>
+	
+	<table name="btManualNavLinks">
+		<field name="bID" type="I"><unsigned /></field>
+		<field name="linkToCID" type="I"><unsigned /></field>
+		<field name="linkText" type="C" size="255"></field>
+		<field name="position" type="I"><unsigned /></field>
+	</table>
+	
+</schema>

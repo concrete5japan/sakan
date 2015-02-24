@@ -8997,7 +8997,7 @@ a:hover img {
 }
 
 /* line 391, ../scss/styles.scss */
-#breadcrumbArea {
+.breadcrumbArea {
   margin-bottom: 20px;
   padding-top: 5px;
   font-size: 0.9em;
@@ -9005,16 +9005,16 @@ a:hover img {
   background-color: #0288D1;
 }
 /* line 397, ../scss/styles.scss */
-#breadcrumbArea .list-inline {
+.breadcrumbArea .list-inline {
   margin-bottom: 5px;
 }
 /* line 400, ../scss/styles.scss */
-#breadcrumbArea li + li:before {
+.breadcrumbArea li + li:before {
   content: ">";
   padding-right: 1em;
 }
 /* line 404, ../scss/styles.scss */
-#breadcrumbArea a {
+.breadcrumbArea a {
   color: #fff;
 }
 
@@ -9346,3 +9346,4 @@ ul.pagination__list>li>a:hover,ul.pagination__list>li>a.current {
 	background:#469960;
 	border:1px solid #469960;
 }
+

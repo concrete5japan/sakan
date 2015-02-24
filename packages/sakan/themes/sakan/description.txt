@@ -1,1 +1,2 @@
-CMSプロレス Vol.1 Shibuya WGP
+Sakan
+Sakan theme is also help develop concrete5 site easier.
