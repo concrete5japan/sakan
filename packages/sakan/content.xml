@@ -686,7 +686,7 @@
             </area>
             <area name="Sidebar">
                 <blocks>
-                    <block type="topic_list" name="">
+                    <block type="topic_list" name="" mc-block-id="b11">
                         <data>
                             <mode>P</mode>
                             <title>Topics</title>
@@ -695,7 +695,7 @@
                             <cParentID>{ccm:export:page:/blog}</cParentID>
                         </data>
                     </block>
-                    <block type="date_navigation" name="">
+                    <block type="date_navigation" name="" mc-block-id="b12">
                         <style>
                             <customClass>block-sidebar-padded</customClass>
                         </style>
