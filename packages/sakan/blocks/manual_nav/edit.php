@@ -41,9 +41,8 @@ $this->inc('edit_row.php', array('rowInfo' => $tmpRowInfo));
 
 <div style="font-weight: bold;">
 	[<a id="ccm-edit-addRow" class="ccm-sitemap-select-page" dialog-title="<?php  echo t('Choose Page'); ?>" href="<?php echo REL_DIR_FILES_TOOLS_REQUIRED; ?>/sitemap_search_selector.php?sitemap_select_mode=select_page&callback=manualNav_selectSitemapNode"><?php  echo t('Add Link To Menu...'); ?></a>]
-
-
 </div>
+
 <script type="text/javascript">
 	$(document).ready(function() {
 		$('#ccm-edit-addRow').unbind();
