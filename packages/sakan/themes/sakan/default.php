@@ -5,7 +5,7 @@ $this->inc('elements/header.php'); ?>
                   $a = new GlobalArea('Bread nav');
                   $a->display($c);
                 ?>
-<main>
+                <main>
 <div class="container">
  <div class="row">
   <div class="<?php echo $c->getPageWrapperClass()?>">

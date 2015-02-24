@@ -27,7 +27,7 @@ class PageTheme extends Theme
         $this->requireAsset('css', 'font-awesome');
         $this->requireAsset('javascript', 'picturefill');
     }
-	
+    
     protected $pThemeGridFrameworkHandle = 'bootstrap3';
 
 }

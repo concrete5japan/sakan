@@ -3,7 +3,6 @@ defined('C5_EXECUTE') or die("Access Denied.");
 $this->inc('elements/header.php'); ?>
 
 <main>
-
     <div class="container">
         <div class="row">
             <div class="col-sm-8 col-content">
@@ -23,7 +22,6 @@ $this->inc('elements/header.php'); ?>
             </div>
         </div>
     </div>
-
 </main>
 
 <?php  $this->inc('elements/footer.php'); ?>
