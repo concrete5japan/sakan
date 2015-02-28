@@ -57,6 +57,56 @@
       </output>
     </composer>
     </pagetype>
+     <pagetype name="blog_article" handle="blog_article" launch-in-composer="0">
+      <pagetemplates type="all" default="right_sidebar"/>
+      <target handle="all" package=""/>
+      <composer>
+      <formlayout>
+        <set name="Basics">
+          <control custom-template="" required="1" custom-label="Page Name" type="core_page_property" handle="name"/>
+          <control custom-template="" custom-label="" type="core_page_property" handle="description"/>
+          <control custom-template="" custom-label="" type="core_page_property" handle="url_slug"/>
+          <control custom-template="" custom-label="" type="core_page_property" handle="page_template"/>
+          <control custom-template="" custom-label="" type="core_page_property" handle="publish_target"/>
+        </set>
+        <set name="Content">
+          <control custom-template="" custom-label="Body" output-control-id="EcjltFnD" type="block" handle="content"/>
+        </set>
+      </formlayout>
+      <output>
+        <pagetemplate handle="right_sidebar">
+          <page>
+            <area name="Main">
+              <blocks>
+                  <block type="core_page_type_composer_control_output" name="">
+                    <control output-control-id="EcjltFnD"/>
+                  </block>
+              </blocks>
+            </area>
+            <area name="Sidebar">
+                <blocks>
+                    <block type="date_navigation" name="" mc-block-id="b12">
+                        <style>
+                            <customClass>block-sidebar-padded</customClass>
+                        </style>
+                        <data table="btDateNavigation">
+                            <record>
+                                <title><![CDATA[Archives]]></title>
+                                <redirectToResults>0</redirectToResults>
+                                <filterByParent>1</filterByParent>
+                                <cParentID>{ccm:export:page:/blog}</cParentID>
+                                <cTargetID/>
+                                <ptID>{ccm:export:pagetype:blog_article}</ptID>
+                            </record>
+                        </data>
+                    </block>
+                </blocks>
+            </area>
+          </page>
+        </pagetemplate>
+      </output>
+    </composer>
+    </pagetype>
     </pagetypes>
 	  <stacks>
 	    <stack name="Header Site Title" type="global_area">
@@ -676,7 +726,7 @@
                                 <cThis><![CDATA[1]]></cThis>
                                 <includeName><![CDATA[1]]></includeName>
                                 <includeDescription><![CDATA[0]]></includeDescription>
-                                <ptID>{ccm:export:pagetype:page}</ptID>
+                                <ptID>{ccm:export:pagetype:blog_article}</ptID>
                                 <pageListTitle>Related Posts</pageListTitle>
                                 <relatedTopicAttributeKeyHandle>blog_entry_topics</relatedTopicAttributeKeyHandle>
                             </record>
@@ -706,14 +756,14 @@
                                 <filterByParent>1</filterByParent>
                                 <cParentID>{ccm:export:page:/blog}</cParentID>
                                 <cTargetID/>
-                                <ptID>{ccm:export:pagetype:page}</ptID>
+                                <ptID>{ccm:export:pagetype:blog_article}</ptID>
                             </record>
                         </data>
                     </block>
                 </blocks>
             </area>
         </page>
-        <page name="Hello World!" public-date="2015-02-01 12:00:00" path="/blog/hello-world" filename="" pagetype="page" template="right_sidebar" user="admin" description="ここにHello Worldの説明がはいります" package="">
+        <page name="Hello World!" public-date="2015-02-01 12:00:00" path="/blog/hello-world" filename="" pagetype="blog_article" template="right_sidebar" user="admin" description="ここにHello Worldの説明がはいります" package="">
             <attributes>
                 <attributekey handle="blog_entry_topics">
                     <topics>
@@ -743,21 +793,7 @@
                             <cParentID>{ccm:export:page:/blog}</cParentID>
                         </data>
                     </block>
-                    <block type="date_navigation" name="">
-                        <style>
-                            <customClass>block-sidebar-padded</customClass>
-                        </style>
-                        <data table="btDateNavigation">
-                            <record>
-                                <title><![CDATA[Archives]]></title>
-                                <redirectToResults>0</redirectToResults>
-                                <filterByParent>1</filterByParent>
-                                <cParentID>{ccm:export:page:/blog}</cParentID>
-                                <cTargetID/>
-                                <ptID>{ccm:export:pagetype:page}</ptID>
-                            </record>
-                        </data>
-                    </block>
+                    <block mc-block-id="b12"/>
                 </blocks>
             </area>
         </page>
