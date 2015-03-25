@@ -3,9 +3,26 @@
     <themes>
         <theme handle="sakan" package="" activated="1"/>
     </themes>
+    <attributekeys>
+        <attributekey handle="blog_entry_topics" name="Blog Entry Topics" package="" searchable="1" indexed="1" type="topics" category="collection">
+            <tree name="Blog Entries" path="/"/>
+        </attributekey>
+        <attributekey handle="news_entry_topics" name="News Entry Topics" package="" searchable="1" indexed="1" type="topics" category="collection">
+            <tree name="News Entries" path="/"/>
+        </attributekey>
+    </attributekeys>
+    <attributesets>
+        <attributeset handle="blog" name="Blog" package="" locked="0" category="collection">
+            <attributekey handle="blog_entry_topics"/>
+        </attributeset>
+        <attributeset handle="news" name="News" package="" locked="0" category="collection">
+            <attributekey handle="news_entry_topics"/>
+        </attributeset>
+    </attributesets>
     <pagetemplates>
         <pagetemplate icon="blank.png" name="Blank" handle="blank" package="" internal=""/>
         <pagetemplate icon="full.png" name="Full" handle="full" package="" internal=""/>
+        <pagetemplate icon="left_sidebar.png" name="Left Sidebar" handle="left_sidebar" package="" internal=""/>
         <pagetemplate icon="right_sidebar.png" name="Right Sidebar" handle="right_sidebar" package="" internal=""/>
     </pagetemplates>
     <pagetypes>
@@ -34,6 +51,56 @@
                     <control output-control-id="EcjltFnE"/>
                   </block>
               </blocks>
+            </area>
+          </page>
+        </pagetemplate>
+      </output>
+    </composer>
+    </pagetype>
+     <pagetype name="blog_article" handle="blog_article" launch-in-composer="0">
+      <pagetemplates type="all" default="right_sidebar"/>
+      <target handle="all" package=""/>
+      <composer>
+      <formlayout>
+        <set name="Basics">
+          <control custom-template="" required="1" custom-label="Page Name" type="core_page_property" handle="name"/>
+          <control custom-template="" custom-label="" type="core_page_property" handle="description"/>
+          <control custom-template="" custom-label="" type="core_page_property" handle="url_slug"/>
+          <control custom-template="" custom-label="" type="core_page_property" handle="page_template"/>
+          <control custom-template="" custom-label="" type="core_page_property" handle="publish_target"/>
+        </set>
+        <set name="Content">
+          <control custom-template="" custom-label="Body" output-control-id="EcjltFnD" type="block" handle="content"/>
+        </set>
+      </formlayout>
+      <output>
+        <pagetemplate handle="right_sidebar">
+          <page>
+            <area name="Main">
+              <blocks>
+                  <block type="core_page_type_composer_control_output" name="">
+                    <control output-control-id="EcjltFnD"/>
+                  </block>
+              </blocks>
+            </area>
+            <area name="Sidebar">
+                <blocks>
+                    <block type="date_navigation" name="" mc-block-id="b12">
+                        <style>
+                            <customClass>block-sidebar-padded</customClass>
+                        </style>
+                        <data table="btDateNavigation">
+                            <record>
+                                <title><![CDATA[Archives]]></title>
+                                <redirectToResults>0</redirectToResults>
+                                <filterByParent>1</filterByParent>
+                                <cParentID>{ccm:export:page:/blog}</cParentID>
+                                <cTargetID/>
+                                <ptID>{ccm:export:pagetype:blog_article}</ptID>
+                            </record>
+                        </data>
+                    </block>
+                </blocks>
             </area>
           </page>
         </pagetemplate>
@@ -185,6 +252,17 @@
 	            </data>
 	          </block>
 	        </blocks>
+	      </area>
+	    </stack>
+	    <stack name="Footer Social" type="global_area">
+	      <area name="Main">
+	          <blocks>
+	            <block type="social_links" name="" mc-block-id="b9">
+	              <link service="twitter"/>
+	              <link service="github"/>
+	              <link service="facebook"/>
+	            </block>
+	          </blocks>
 	      </area>
 	    </stack>
 	    <stack name="Bread nav" type="global_area">
@@ -547,7 +625,7 @@
     <page name="新着情報" path="/news" filename="" pagetype="page" template="right_sidebar" user="admin" description="" package="">
       <area name="Main">
       	<blocks>
-	        <block type="page_list" name="" mc-block-id="b">
+	        <block type="page_list" name="" mc-block-id="b" custom-template="blog_index">
 	            <data table="btPageList">
 	                <record>
 	                    <num><![CDATA[3]]></num>
@@ -608,6 +686,15 @@
       </area>
             <area name="Sidebar">
                 <blocks>
+                    <block type="topic_list" name="">
+                        <data>
+                            <mode>P</mode>
+                            <title>Topics</title>
+                            <topicAttributeKeyHandle>news_entry_topics</topicAttributeKeyHandle>
+                            <tree>News Entries</tree>
+                            <cParentID>{ccm:export:page:/news}</cParentID>
+                        </data>
+                    </block>
                     <block type="date_navigation" name="">
                         <style>
                             <customClass>block-sidebar-padded</customClass>
@@ -639,9 +726,37 @@
                                 <cThis><![CDATA[1]]></cThis>
                                 <includeName><![CDATA[1]]></includeName>
                                 <includeDescription><![CDATA[0]]></includeDescription>
-                                <ptID>{ccm:export:pagetype:page}</ptID>
+                                <ptID>{ccm:export:pagetype:blog_article}</ptID>
                                 <pageListTitle>Related Posts</pageListTitle>
                                 <relatedTopicAttributeKeyHandle>blog_entry_topics</relatedTopicAttributeKeyHandle>
+                            </record>
+                        </data>
+                    </block>
+                </blocks>
+            </area>
+            <area name="Sidebar">
+                <blocks>
+                    <block type="topic_list" name="" mc-block-id="b11">
+                        <data>
+                            <mode>P</mode>
+                            <title>Topics</title>
+                            <topicAttributeKeyHandle>blog_entry_topics</topicAttributeKeyHandle>
+                            <tree>Blog Entries</tree>
+                            <cParentID>{ccm:export:page:/blog}</cParentID>
+                        </data>
+                    </block>
+                    <block type="date_navigation" name="" mc-block-id="b12">
+                        <style>
+                            <customClass>block-sidebar-padded</customClass>
+                        </style>
+                        <data table="btDateNavigation">
+                            <record>
+                                <title><![CDATA[Archives]]></title>
+                                <redirectToResults>0</redirectToResults>
+                                <filterByParent>1</filterByParent>
+                                <cParentID>{ccm:export:page:/blog}</cParentID>
+                                <cTargetID/>
+                                <ptID>{ccm:export:pagetype:blog_article}</ptID>
                             </record>
                         </data>
                     </block>
@@ -667,6 +782,41 @@
                     </block>
                 </blocks>
             </area>
+            <area name="Sidebar">
+                <blocks>
+                    <block type="topic_list" name="">
+                        <data>
+                            <mode>P</mode>
+                            <title>Topics</title>
+                            <topicAttributeKeyHandle>blog_entry_topics</topicAttributeKeyHandle>
+                            <tree>Blog Entries</tree>
+                            <cParentID>{ccm:export:page:/blog}</cParentID>
+                        </data>
+                    </block>
+                    <block mc-block-id="b12"/>
+                </blocks>
+            </area>
         </page>
     </pages>
+    <trees>
+     <tree type="topic" name="Blog Entries">
+         <topic_category name="Reviews">
+             <topic name="Movies"/>
+             <topic name="Books"/>
+             <topic name="Music"/>
+         </topic_category>
+         <topic name="Projects"/>
+         <topic name="Sports"/>
+         <topic name="Humor"/>
+     </tree>
+     <tree type="topic" name="News Entries">
+        <topic_category name="ニュース">
+            <topic name="在校生"/>
+            <topic name="受験生"/>
+        </topic_category>
+        <topic name="お知らせ"/>
+        <topic name="メディア"/>
+        <topic name="緊急"/>
+      </tree>
+    </trees>
 </concrete5-cif>
