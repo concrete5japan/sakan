@@ -11,13 +11,13 @@ defined('C5_EXECUTE') or die("Access Denied."); ?>
       $a = new GlobalArea('Footer Site Title');
       $a->display($c);
     ?>
-      <div class="small-9 columns">
+      <div class="medium-9 small-12 columns">
         <?php
           $a = new GlobalArea('Footer Navigation');
           $a->display($c);
         ?>
       </div>
-      <div class="small-3 columns">
+      <div class="medium-3 small-12 columns">
         <?php
           $a = new GlobalArea('Footer Contact');
           $a->display($c);
@@ -30,7 +30,7 @@ defined('C5_EXECUTE') or die("Access Denied."); ?>
  <div id="copyArea">
   <div class="container">
     <div class="row">
-      <div class="small-9 columns">
+      <div class="medium-9 small-12 columns">
         <?php
           $a = new GlobalArea('Footer Legal');
           $a->display($c);
@@ -59,7 +59,7 @@ defined('C5_EXECUTE') or die("Access Denied."); ?>
             ?>
         </p>
       </div>
-      <div class="small-3 columns">
+      <div class="medium-3 small-12 columns">
         <?php
           $a = new GlobalArea('Footer Social');
           $a->display($c);
