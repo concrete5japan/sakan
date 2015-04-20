@@ -8,7 +8,7 @@
     
     <?php Loader::element('header_required', array('pageTitle' => $pageTitle));?>
 	  <link rel="stylesheet" href="<?php echo $this->getThemePath(); ?>/css/normalize.css">
-	  <link rel="stylesheet" href="<?php echo $this->getThemePath(); ?>/css/foundation.css">
+	  <link rel="stylesheet" href="<?php echo $this->getThemePath(); ?>/css/foundation.min.css">
 	  <link rel="stylesheet" href="<?php echo $this->getThemePath(); ?>/css/typography.css">
 	  <link rel="stylesheet" href="<?php echo $this->getThemePath(); ?>/css/styles.less">
     <script src="<?php echo $this->getThemePath(); ?>/js/vendor/modernizr.js"></script>
@@ -17,37 +17,37 @@
   <body>
   <div class="<?php echo $c->getPageWrapperClass()?>">
 	<header>
-		<div class="navbar-inverse">
 			<div class="container">
 				<div class="row">
-	                <?php
-	                  $a = new GlobalArea('Header Site Title');
-	                  $a->display($c);
-	                ?>
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#masthead" aria-expanded="false" aria-controls="navbar">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-					</div>
-					<div id="masthead" class="collapse navbar-collapse">
-	                <?php
-	                  $a = new GlobalArea('Header Search');
-	                  $a->display($c);
-	                ?>
-							<a href="#" onclick="$('#header_search_form').submit();"><span class="glyphicon glyphicon-search"></span></a>
-						</form>
-	                <?php
-	                  $a = new GlobalArea('Header Sub Navigation');
-	                  $a->display($c);
-	                ?>
-					</div><!-- /.nav-collapse -->
+					<div class="small-12 large-8 columns">
+						<?php
+		                  $a = new GlobalArea('Header Site Title');
+		                  $a->display($c);
+		                ?>
+		            </div>
+					<div class="small-12 large-4 columns">
+		                <?php
+		                  $a = new GlobalArea('Header Search');
+		                  $a->display($c);
+		                ?>
+		            </div>
+		        </div>
+				<div class="row">
+					<div class="contain-to-grid">
+						<nav class="top-bar" data-topbar role="navigation">
+							<ul class="title-area">
+								<li class="name">
+		                		</li>
+		                		<li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+		                	</ul>
+				                <?php
+				                  $a = new GlobalArea('Header Sub Navigation');
+				                  $a->display($c);
+				                ?>
+			            </nav>
+			        </div>
 				</div>
 			</div>
-		</div>
-
 	</header>
 	
     <?php

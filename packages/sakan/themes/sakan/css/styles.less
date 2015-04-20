@@ -1,5 +1,31 @@
 @charset "UTF-8";
 
+#ccm-menu-highlighter,
+#ccm-menu-click-proxy {
+  margin-top: -49px;
+}
+ 
+#ccm-popover-menu-container .ccm-edit-mode-block-menu,
+#ccm-popover-menu-container .popover {
+  margin-top: -30px;
+}
+ 
+#ccm-inline-toolbar-container {
+  margin-top: -49px !important;
+}
+#ccm-inline-toolbar-container .redactor_toolbar.ccm-inline-toolbar .ccm-inline-toolbar-button button {
+  margin: 0;
+}
+#ccm-inline-toolbar-container.ccm-inline-toolbar-affixed {
+  margin-top: 2px !important;
+}
+ 
+.ccm-panel-content-inner {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: content-box;
+}
+
 
 @font-face {
   font-family: 'Glyphicons Halflings';
@@ -1104,14 +1130,7 @@ tbody.collapse.in {
   border-width: 1px 0 0;
 }
 
-/* line 164, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_navbar.scss */
-.navbar-brand {
-  float: left;
-  padding: 15px 15px;
-  font-size: 18px;
-  line-height: 20px;
-  height: 50px;
-}
+
 /* line 171, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-brand:hover, .navbar-brand:focus {
   text-decoration: none;
@@ -1583,28 +1602,6 @@ tbody.collapse.in {
   color: #444;
 }
 
-/* line 6, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_breadcrumbs.scss */
-.breadcrumb {
-  padding: 8px 15px;
-  margin-bottom: 20px;
-  list-style: none;
-  background-color: #f5f5f5;
-  border-radius: 4px;
-}
-/* line 13, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_breadcrumbs.scss */
-.breadcrumb > li {
-  display: inline-block;
-}
-/* line 16, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_breadcrumbs.scss */
-.breadcrumb > li + li:before {
-  content: "/ï¾ã‚";
-  padding: 0 5px;
-  color: #ccc;
-}
-/* line 23, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/_breadcrumbs.scss */
-.breadcrumb > .active {
-  color: #777777;
-}
 
 .breadcrumbs{
   margin:0 auto;
@@ -1647,45 +1644,6 @@ tbody.collapse.in {
   color: #666;
 }
 
-/* line 42, ../scss/styles.scss */
-.navbar-inverse {
-  background-color: #fff;
-}
-/* line 44, ../scss/styles.scss */
-.navbar-inverse .navbar-toggle,
-.navbar-inverse .navbar-collapse,
-.navbar-inverse .navbar-form {
-  border-color: #03A9F4;
-}
-/* line 49, ../scss/styles.scss */
-.navbar-inverse .navbar-toggle .icon-bar,
-.navbar-inverse .navbar-collapse .icon-bar,
-.navbar-inverse .navbar-form .icon-bar {
-  background-color: #03A9F4;
-}
-/* line 54, ../scss/styles.scss */
-.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
-  background-color: #B3E5FC;
-}
-/* line 59, ../scss/styles.scss */
-.navbar-inverse .navbar-brand {
-  color: #000;
-  height: auto;
-}
-/* line 62, ../scss/styles.scss */
-.navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {
-  color: #808080;
-}
-
-/* line 68, ../scss/styles.scss */
-.navbar-form {
-  border-top: none;
-}
-
-/* line 71, ../scss/styles.scss */
-.navbar-nav {
-  margin: 0;
-}
 
 /* line 76, ../scss/styles.scss */
 #globalNav {
@@ -2330,6 +2288,17 @@ ul.pagination__list>li>a:hover,ul.pagination__list>li>a.current {
 }
 
 /* concrete5.7 */
+header .ccm-search-block-form .ccm-search-block-text{ float:left; width:85%; }
 main{
 	margin-bottom:20px;
+}
+.contain-to-grid,
+.top-bar,
+.top-bar.expanded .title-area,
+.top-bar-section ul li,
+.top-bar-section li:not(.has-form) a:not(.button),
+.top-bar-section li:not(.has-form) a:not(.button):hover,
+.top-bar-section li.active:not(.has-form) a:not(.button){
+  background:#fafafa;
+  color:#333333;
 }

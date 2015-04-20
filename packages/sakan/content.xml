@@ -46,9 +46,6 @@
 	      <area name="Main">
 	        <blocks>
 	          <block type="content" name="" mc-block-id="b1">
-	           <style>
-	            <customClass>navbar-brand</customClass>
-	           </style>
 	            <data table="btContentLocal">
 	              <record>
 	                <content><![CDATA[<a href="{ccm:export:page:}"><concrete-picture alt="" file="logo.png" /></a>]]></content>
@@ -64,7 +61,7 @@
 	          <block type="content" name="" mc-block-id="b2">
 	            <data table="btContentLocal">
 	              <record>
-	                <content><![CDATA[<ul class="nav navbar-nav navbar-right　inline-list"><li><a href="{ccm:export:page:/about/access}" class="fa fa-caret-right">アクセス</a></li><li><a href="{ccm:export:page:/contact}" class="fa fa-caret-right">お問い合わせ</a></li><li><a href="{ccm:export:page:}" class="fa fa-caret-right">ホーム</a></li></ul>]]></content>
+	                <content><![CDATA[<section class="top-bar-section"><ul class="right"><li><a href="{ccm:export:page:/about/access}" class="fa fa-caret-right">アクセス</a></li><li><a href="{ccm:export:page:/contact}" class="fa fa-caret-right">お問い合わせ</a></li><li><a href="{ccm:export:page:}" class="fa fa-caret-right">ホーム</a></li></ul></section>]]></content>
 	              </record>
 	            </data>
 	          </block>
@@ -78,7 +75,7 @@
 	            <data table="btSearch">
 	              <record>
 	                <title><![CDATA[]]></title>
-	                <buttonText><![CDATA[]]></buttonText>
+	                <buttonText><![CDATA[検索]]></buttonText>
 	                <baseSearchPath><![CDATA[]]></baseSearchPath>
 	                <postTo_cID>{ccm:export:page:/search}</postTo_cID>
 	                <resultsURL><![CDATA[]]></resultsURL>
@@ -388,13 +385,6 @@
                 </column>
               </columns>
             </arealayout>
-          </block>
-          <block type="content" name="">
-            <data table="btContentLocal">
-              <record>
-                <content><![CDATA[<h2>新着情報</h2><p>新着情報がはいります</p>]]></content>
-              </record>
-            </data>
           </block>
         </blocks>
       </area>
