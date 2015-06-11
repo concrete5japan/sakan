@@ -117,7 +117,7 @@ echo '<nav id="globalNav" role="navigation"><div class="container"><ul class="na
 foreach ($navItems as $ni) 
 {
 
-    echo '<li class="medium-2 small-6 columns ' . $ni->classes . '">'; //opens a nav item
+    echo '<li class="col-sm-2 col-xs-6 ' . $ni->classes . '">'; //opens a nav item
     $name = (isset($translate) && $translate == true) ? t($ni->name) : $ni->name;
     echo '<a href="' . $ni->url . '" target="' . $ni->target . '" class="' . $ni->classes . '">' . $name . '</a>';
 

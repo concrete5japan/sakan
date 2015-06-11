@@ -48,7 +48,7 @@
 	          <block type="content" name="" mc-block-id="b1">
 	            <data table="btContentLocal">
 	              <record>
-	                <content><![CDATA[<a href="{ccm:export:page:}"><concrete-picture alt="" file="logo.png" /></a>]]></content>
+	                <content><![CDATA[<a class="navbar-brand" href="{ccm:export:page:}"><concrete-picture alt="" file="logo.png" class="img-responsive" /></a>]]></content>
 	              </record>
 	            </data>
 	          </block>
@@ -61,7 +61,7 @@
 	          <block type="content" name="" mc-block-id="b2">
 	            <data table="btContentLocal">
 	              <record>
-	                <content><![CDATA[<section class="top-bar-section"><ul class="right"><li><a href="{ccm:export:page:/about/access}" class="fa fa-caret-right">アクセス</a></li><li><a href="{ccm:export:page:/contact}" class="fa fa-caret-right">お問い合わせ</a></li><li><a href="{ccm:export:page:}" class="fa fa-caret-right">ホーム</a></li></ul></section>]]></content>
+	                <content><![CDATA[<section class="top-bar-section"><ul class="nav navbar-nav navbar-right"><li><a href="{ccm:export:page:/about/access}" class="fa fa-caret-right">アクセス</a></li><li><a href="{ccm:export:page:/contact}" class="fa fa-caret-right">お問い合わせ</a></li><li><a href="{ccm:export:page:}" class="fa fa-caret-right">ホーム</a></li></ul></section>]]></content>
 	              </record>
 	            </data>
 	          </block>
@@ -72,6 +72,33 @@
 	      <area name="Main">
 	        <blocks>
 	          <block type="search" name="" mc-block-id="b3">
+                    <style>
+                      <backgroundColor/>
+                      <backgroundRepeat/>
+                      <borderWidth/>
+                      <borderColor/>
+                      <borderStyle/>
+                      <borderRadius/>
+                      <baseFontSize/>
+                      <alignment/>
+                      <textColor/>
+                      <linkColor/>
+                      <paddingTop/>
+                      <paddingBottom/>
+                      <paddingLeft/>
+                      <paddingRight/>
+                      <marginTop/>
+                      <marginBottom/>
+                      <marginLeft/>
+                      <marginRight/>
+                      <rotate/>
+                      <boxShadowHorizontal/>
+                      <boxShadowVertical/>
+                      <boxShadowBlur/>
+                      <boxShadowSpread/>
+                      <boxShadowColor/>
+                      <customClass>navbar-form navbar-right</customClass>
+                    </style>
 	            <data table="btSearch">
 	              <record>
 	                <title><![CDATA[]]></title>
@@ -151,7 +178,7 @@
 	          <block type="content" name="" mc-block-id="b6">
 	            <data table="btContentLocal">
 	              <record>
-	                <content><![CDATA[<ul class="foot-navi inline-list"><li><a href="{ccm:export:page:/about/access}" class="fa fa-caret-right">アクセス</a></li><li><a href="{ccm:export:page:/contact}" class="fa fa-caret-right">お問い合わせ</a></li><li><a href="{ccm:export:page:}" class="fa fa-caret-right">ホーム</a></li></ul>]]></content>
+	                <content><![CDATA[<ul class="foot-navi list-inline"><li><a href="{ccm:export:page:/about/access}" class="fa fa-caret-right">アクセス</a></li><li><a href="{ccm:export:page:/contact}" class="fa fa-caret-right">お問い合わせ</a></li><li><a href="{ccm:export:page:}" class="fa fa-caret-right">ホーム</a></li></ul>]]></content>
 	              </record>
 	            </data>
 	          </block>
@@ -244,7 +271,7 @@
             <block type="image_slider" name="">
                 <data table="btImageSlider">
                     <record>
-                        <navigationType><![CDATA[1]]></navigationType>
+                        <navigationType><![CDATA[0]]></navigationType>
                     </record>
                 </data>
                 <data table="btImageSliderEntries">

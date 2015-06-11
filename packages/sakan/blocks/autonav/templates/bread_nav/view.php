@@ -112,7 +112,7 @@ foreach ($navItems as $ni) {
 
 //*** Step 2 of 2: Output menu HTML ***/
 
-echo '<div class="breadcrumbArea"><div class="row"><ul class="breadcrumbs">'; //opens the top-level menu
+echo '<div id="breadcrumbArea"><div class="container"><ul class="list-inline">'; //opens the top-level menu
 
 foreach ($navItems as $ni) 
 {
