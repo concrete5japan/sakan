@@ -1,133 +1,146 @@
-<?php 
+<?php
 namespace Concrete\Package\Sakan\Block\ManualNav;
 
 use Concrete\Core\Block\BlockController;
 use Loader;
 use Page;
-defined('C5_EXECUTE') or die("Access Denied.");
-class Controller extends BlockController 
+
+class Controller extends BlockController
 {
-	
-	protected $btTable = 'btManualNav';
-	protected $btInterfaceWidth = "600";
-	protected $btInterfaceHeight = "480";
+    protected $btTable = 'btManualNav';
+    protected $btExportTables = array('btManualNav', 'btManualNavEntries');
+    protected $btInterfaceWidth = "600";
+    protected $btWrapperClass = 'ccm-ui';
+    protected $btInterfaceHeight = "465";
+    protected $btCacheBlockRecord = true;
+//    protected $btExportFileColumns = array('fID');
+    protected $btCacheBlockOutput = true;
+    protected $btCacheBlockOutputOnPost = true;
+    protected $btCacheBlockOutputForRegisteredUsers = false;
+    protected $btIgnorePageThemeGridFrameworkContainer = true;
 
-	protected $btCacheBlockRecord = true;
-	protected $btCacheBlockOutput = true;
-	protected $btCacheBlockOutputOnPost = true;
-	protected $btCacheBlockOutputForRegisteredUsers = true;
-	protected $btCacheBlockOutputLifetime = CACHE_LIFETIME;
-		
-	public function getBlockTypeName() {
-		return t("Manual Nav");
-	}
+    public function getBlockTypeDescription()
+    {
+        return t("Manual Nav.");
+    }
 
-	public function getBlockTypeDescription() {
-		return t('Manually choose pages for a navigation menu.');
-	}
+    public function getBlockTypeName()
+    {
+        return t("Manual Nav");
+    }
 
-	public function getJavaScriptStrings() {
-		return array(
-			'one-link-required' => t('You must choose at least one link.'),
-		);
-	}
-	
-	function add() {
-		$this->set('links', array());
-	}
-	
-	function edit() {
-		$links = $this->getLinks();
-		$this->set('links', $links);
-	}
-	
-	function view() {
-		$nh = Loader::helper('navigation');
-		$currentPage = Page::getCurrentPage();
-		$currentCID = $currentPage->getCollectionID();
-		$currentCPath = $currentPage->getCollectionPath();
-		
-		$linkRows = $this->getLinks();
-		$linkObjs = array();
-		
-		foreach ($linkRows as $row) {
-			$page = Page::getByID($row['linkToCID']);
-			$linkCPath = $page->getCollectionPath();
-			$link = new stdClass;
-			$link->url = $nh->getLinkToCollection($page);
-			$link->text = $row['linkText'];
-			$link->cID = $row['linkToCID'];
-			$link->cPath = $linkCPath;
-			$link->isCurrent = ($currentCID === $row['linkToCID']);
-			$link->inPath = $this->isPageInPath($currentCPath, $linkCPath);
-			$link->cObj = $page;
-			$linkObjs[] = $link;
-		}
-		$this->set('links', $linkObjs);
-	}
-	//Internal utility function -- tells you if the first path is "under" the second path
-	// (meaning that the first path is equal to or begins with the second path).
-	//EXCEPT: if underSectionPath is the home page and checkPagePath is *not* the home page,
-	// then we always return false (because *every* page in a C5 site is under the home page,
-	// so it's not meaningful information)
-	private function isPageInPath($checkPagePath, $underSectionPath) {
-		//DEV NOTE: All this checking for home pages has a secondary benefit:
-		// some users have reported that php warnings are generated when you pass
-		// an empty string to the strpos() function, so by checking for home page
-		// first, we can avoid calling strpos if either path is empty.
-		$pagePathIsHome = empty($checkPagePath);
-		$sectionPathIsHome = empty($underSectionPath);
-		if ($pagePathIsHome && $sectionPathIsHome) {
-			return true;
-		} else if ($pagePathIsHome || $sectionPathIsHome) {
-			return false;
-		} else {
-			return (strpos($checkPagePath, $underSectionPath) === 0);
-		}
-	}
-	
-	function getLinks() {
-		$db = Loader::db();
-		$sql = 'SELECT * FROM btManualNavLinks WHERE bID=' . intval($this->bID) . ' ORDER BY position';
-		return $db->getAll($sql);
-	}	
-	
-	function delete(){
-		$db = Loader::db();
-		$db->query("DELETE FROM btManualNavLinks WHERE bID=".intval($this->bID));		
-		parent::delete();
-	}
+    public function getSearchableContent()
+    {
+        $content = '';
+        $db = Loader::db();
+        $v = array($this->bID);
+        $q = 'select * from btManualNavEntries where bID = ?';
+        $r = $db->query($q, $v);
+        foreach($r as $row) {
+           $content.= $row['title'].' ';
+        }
+        return $content;
+    }
 
-	function duplicate($nbID) {
-		parent::duplicate($nbID);
-		$links = $this->getLinks();
-		$db = Loader::db();
-		$sql = "INSERT INTO btManualNavLinks (bID, linkToCID, linkText, position)"
-		 	 . " SELECT ?, linkToCID, linkText, position FROM btManualNavLinks WHERE bID = ?";
-		$vals = array($nbID, $this->bID);
-		$db->Execute($sql, $vals);
-	}
-	
-	function save($data) {
-		$db = Loader::db();
-		if(count($data['linkToCIDs']) ){
-			//delete existing links
-			$db->query("DELETE FROM btManualNavLinks WHERE bID = ?", array($this->bID));
-			
-			//loop through and add the links
-			$pos=0;
-			foreach($data['linkToCIDs'] as $linkToCID){ 
-				if(intval($linkToCID)==0 || $data['LinkTexts'][$pos]=='tempLinkText') continue;
-				$sql = "INSERT INTO btManualNavLinks (bID, linkToCID, linkText, position) values (?,?,?,?)";
-				$vals = array($this->bID, $linkToCID, $data['linkTexts'][$pos], $pos);
-				$db->Execute($sql, $vals);
-				$pos++;
-			}
-		}
+    public function add()
+    {
+//        $this->requireAsset('core/file-manager');
+        $this->requireAsset('core/sitemap');
+        $this->requireAsset('redactor');
+    }
 
-		parent::save($data);
-	}
+    public function edit()
+    {
+//        $this->requireAsset('core/file-manager');
+        $this->requireAsset('core/sitemap');
+        $this->requireAsset('redactor');
+        $db = Loader::db();
+        $query = $db->GetAll('SELECT * from btManualNavEntries WHERE bID = ? ORDER BY sortOrder', array($this->bID));
+        $this->set('rows', $query);
+    }
+
+    public function registerViewAssets()
+    {
+//        $this->requireAsset('javascript', 'jquery');
+    }
+
+    public function view()
+    {
+        $db = Loader::db();
+        $r = $db->GetAll('SELECT * from btManualNavEntries WHERE bID = ? ORDER BY sortOrder', array($this->bID));
+        // in view mode, linkURL takes us to where we need to go whether it's on our site or elsewhere
+        $rows = array();
+        foreach($r as $q) {
+            if (!$q['linkURL'] && $q['internalLinkCID']) {
+                $c = Page::getByID($q['internalLinkCID'], 'ACTIVE');
+                $q['linkURL'] = $c->getCollectionLink();
+		$q['collectionName'] = $c->getCollectionName();
+            }
+            $rows[] = $q;
+        }
+        $this->set('rows', $rows);
+    }
+
+    public function duplicate($newBID) {
+        parent::duplicate($newBID);
+        $db = Loader::db();
+        $v = array($this->bID);
+        $q = 'select * from btManualNavEntries where bID = ?';
+        $r = $db->query($q, $v);
+        while ($row = $r->FetchRow()) {
+            $db->execute('INSERT INTO btManualNavEntries (bID, linkURL, title, sortOrder) values(?,?,?,?)',
+                array(
+                    $newBID,
+                    $row['linkURL'],
+                    $row['title'],
+                    $row['sortOrder']
+                )
+            );
+        }
+    }
+
+    public function delete()
+    {
+        $db = Loader::db();
+        $db->delete('btManualNavEntries', array('bID' => $this->bID));
+        parent::delete();
+    }
+
+    public function save($args)
+    {
+        $db = Loader::db();
+        $db->execute('DELETE from btManualNavEntries WHERE bID = ?', array($this->bID));
+        $count = count($args['sortOrder']);
+        $i = 0;
+        parent::save($args);
+
+        while ($i < $count) {
+            $linkURL = $args['linkURL'][$i];
+            $internalLinkCID = $args['internalLinkCID'][$i];
+            switch (intval($args['linkType'][$i])) {
+                case 1:
+                    $linkURL = '';
+                    break;
+                case 2:
+                    $internalLinkCID = 0;
+                    break;
+                default:
+                    $linkURL = '';
+                    $internalLinkCID = 0;
+                    break;
+            }
+
+            $db->execute('INSERT INTO btManualNavEntries (bID, title, sortOrder, linkURL, internalLinkCID) values(?, ?,?,?,?)',
+                array(
+                    $this->bID,
+                    $args['title'][$i],
+                    $args['sortOrder'][$i],
+                    $linkURL,
+                    $internalLinkCID
+                )
+            );
+            $i++;
+        }
+    }
 
 }
-
-?>

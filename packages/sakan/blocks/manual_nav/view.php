@@ -1,25 +1,25 @@
-<?php  defined('C5_EXECUTE') or die(_("Access Denied.")); ?>
+<?php defined('C5_EXECUTE') or die("Access Denied.");
+$c = Page::getCurrentPage();
+?>
 
-<ul class="ccm-manual-nav">
-<?php  foreach ($links as $link):
-	$cssClasses = array();
-	
-	if ($link->isCurrent) {
-		$cssClasses[] = 'nav-selected';
-	}
-	
-	if ($link->inPath) {
-		$cssClasses[] = 'nav-path-selected';
-	}
-	
-	$cssClasses = implode(' ', $cssClasses);
-	?>
-	
-	<li class="<?php  echo $cssClasses; ?>">
-		<a href="<?php  echo $link->url; ?>" class="<?php  echo $cssClasses; ?>">
-			<?php  echo htmlentities($link->text, ENT_QUOTES, APP_CHARSET); ?>
-		</a>
-	</li>
+<div class="ccm-manual-nav-container ccm-block-manual-nav" >
+    <div class="ccm-manual-nav">
+        <div class="ccm-manual-nav-inner">
 
-<?php  endforeach; ?>
-</ul>
+        <?php if(count($rows) > 0) { ?>
+        <ul id="ccm-manual-nav-<?php echo $bID ?>">
+            <?php foreach($rows as $row) { ?>
+                <li>
+                    <a href="<?php echo $row['linkURL'] ?>" class="mega-link-overlay"><?php echo $row['title'] != null ? h($row['title']) : h($row['collectionName']);  ?></a>
+                </li>
+            <?php } ?>
+        </ul>
+        <?php } else { ?>
+        <div class="ccm-manual-nav-placeholder">
+            <p><?php echo t('No nav Entered.'); ?></p>
+        </div>
+        <?php } ?>
+        </div>
+
+    </div>
+</div>
