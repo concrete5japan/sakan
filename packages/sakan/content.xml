@@ -115,47 +115,51 @@
 	    <stack name="Header Navigation" type="global_area">
 	      <area name="Main">
 	        <blocks>
-	          <block type="autonav" name="" custom-template="global_nav" mc-block-id="b4">
-	            <style>
-	              <backgroundColor/>
-	              <backgroundRepeat>no-repeat</backgroundRepeat>
-	              <borderWidth/>
-	              <borderColor/>
-	              <borderStyle>none</borderStyle>
-	              <borderRadius/>
-	              <baseFontSize/>
-	              <alignment/>
-	              <textColor/>
-	              <linkColor/>
-	              <paddingTop/>
-	              <paddingBottom/>
-	              <paddingLeft/>
-	              <paddingRight/>
-	              <marginTop/>
-	              <marginBottom/>
-	              <marginLeft/>
-	              <marginRight/>
-	              <rotate/>
-	              <boxShadowHorizontal/>
-	              <boxShadowVertical/>
-	              <boxShadowBlur/>
-	              <boxShadowSpread/>
-	              <boxShadowColor/>
-	              <customClass/>
-	            </style>
-	            <data table="btNavigation">
-	              <record>
-	                <orderBy><![CDATA[display_asc]]></orderBy>
-	                <displayPages><![CDATA[top]]></displayPages>
-	                <displayPagesCID/>
-	                <displayPagesIncludeSelf><![CDATA[0]]></displayPagesIncludeSelf>
-	                <displaySubPages><![CDATA[none]]></displaySubPages>
-	                <displaySubPageLevels><![CDATA[enough]]></displaySubPageLevels>
-	                <displaySubPageLevelsNum><![CDATA[0]]></displaySubPageLevelsNum>
-	                <displayUnavailablePages><![CDATA[0]]></displayUnavailablePages>
-	              </record>
-	            </data>
-	          </block>
+            <block type="manual_nav" name="" custom-template="global_nav" mc-block-id="b4">
+                <data table="btManualNav">
+                    <record>
+                        <navigationType><![CDATA[0]]></navigationType>
+                    </record>
+                </data>
+                <data table="btManualNavEntries">
+                    <record>
+                        <cID><![CDATA[0]]></cID>
+                        <linkURL><![CDATA[]]></linkURL>
+                        <title><![CDATA[ホーム]]></title>
+                        <sortOrder><![CDATA[0]]></sortOrder>
+                    </record>
+                    <record>
+                        <cID><![CDATA[0]]></cID>
+                        <linkURL><![CDATA[]]></linkURL>
+                        <title><![CDATA[概要]]></title>
+                        <sortOrder><![CDATA[1]]></sortOrder>
+                    </record>
+                    <record>
+                        <cID><![CDATA[0]]></cID>
+                        <linkURL><![CDATA[]]></linkURL>
+                        <title><![CDATA[紹介]]></title>
+                        <sortOrder><![CDATA[2]]></sortOrder>
+                    </record>
+                    <record>
+                        <cID><![CDATA[0]]></cID>
+                        <linkURL><![CDATA[]]></linkURL>
+                        <title><![CDATA[お問い合わせ]]></title>
+                        <sortOrder><![CDATA[3]]></sortOrder>
+                    </record>
+                    <record>
+                        <cID><![CDATA[0]]></cID>
+                        <linkURL><![CDATA[]]></linkURL>
+                        <title><![CDATA[新着情報]]></title>
+                        <sortOrder><![CDATA[4]]></sortOrder>
+                    </record>
+                    <record>
+                        <cID><![CDATA[0]]></cID>
+                        <linkURL><![CDATA[]]></linkURL>
+                        <title><![CDATA[Blog]]></title>
+                        <sortOrder><![CDATA[5]]></sortOrder>
+                    </record>
+                </data>
+            </block>
 	        </blocks>
 	      </area>
 	    </stack>
