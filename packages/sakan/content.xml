@@ -7,9 +7,10 @@
         <pagetemplate icon="blank.png" name="Blank" handle="blank" package="" internal=""/>
         <pagetemplate icon="full.png" name="Full" handle="full" package="" internal=""/>
         <pagetemplate icon="right_sidebar.png" name="Right Sidebar" handle="right_sidebar" package="" internal=""/>
+        <pagetemplate icon="left_sidebar.png" name="Left Sidebar" handle="left_sidebar" package="" internal=""/>
     </pagetemplates>
     <pagetypes>
-     <pagetype name="Page" handle="page" launch-in-composer="0">
+    <pagetype name="Page" handle="page" launch-in-composer="0">
       <pagetemplates type="all" default="full"/>
       <target handle="all" package=""/>
       <composer>
@@ -34,6 +35,123 @@
                     <control output-control-id="EcjltFnE"/>
                   </block>
               </blocks>
+            </area>
+          </page>
+        </pagetemplate>
+      </output>
+    </composer>
+    </pagetype>
+    <pagetype name="News" handle="news" is-frequently-added="1" launch-in-composer="1">
+      <pagetemplates type="all" default="right_sidebar"/>
+      <target handle="all" package=""/>
+      <composer>
+      <formlayout>
+        <set name="Basics">
+          <control custom-template="" required="1" custom-label="Entry Name" type="core_page_property" handle="name"/>
+          <control custom-template="" custom-label="" type="core_page_property" handle="description"/>
+          <control custom-template="" custom-label="" type="core_page_property" handle="url_slug"/>
+          <control custom-template="" custom-label="" type="core_page_property" handle="page_template"/>
+          <control custom-template="" custom-label="" type="core_page_property" handle="publish_target"/>
+        </set>
+        <set name="Content">
+          <control custom-template="" custom-label="Body" output-control-id="newscontent" type="block" handle="content"/>
+        </set>
+      </formlayout>
+      <output>
+        <pagetemplate handle="right_sidebar">
+          <page>
+            <area name="Main">
+              <blocks>
+                <block type="page_title" name="" custom-template="" mc-block-id="">
+                    <data table="btPageTitle">
+                        <record>
+                            <useCustomTitle><![CDATA[0]]></useCustomTitle>
+                            <titleText><![CDATA[[Page Title]]]></titleText>
+                        </record>
+                    </data>
+                </block>
+                <block type="core_page_type_composer_control_output" name="">
+                    <control output-control-id="newscontent"/>
+                </block>
+                <block type="next_previous" name="" mc-block-id="">
+                    <style>
+                        <backgroundColor/>
+                        <backgroundRepeat/>
+                        <borderWidth/>
+                        <borderColor/>
+                        <borderStyle/>
+                        <borderRadius/>
+                        <baseFontSize/>
+                        <alignment/>
+                        <textColor/>
+                        <linkColor/>
+                        <paddingTop/>
+                        <paddingBottom/>
+                        <paddingLeft/>
+                        <paddingRight/>
+                        <marginTop/>
+                        <marginBottom/>
+                        <marginLeft/>
+                        <marginRight/>
+                        <rotate/>
+                        <boxShadowHorizontal/>
+                        <boxShadowVertical/>
+                        <boxShadowBlur/>
+                        <boxShadowSpread/>
+                        <boxShadowColor/>
+                        <customClass>block-sidebar-wrapped</customClass>
+                    </style>
+                    <data table="btNextPrevious">
+                        <record>
+                            <nextLabel><![CDATA[Next Post]]></nextLabel>
+                            <previousLabel><![CDATA[Last Post]]></previousLabel>
+                            <parentLabel><![CDATA[]]></parentLabel>
+                            <loopSequence><![CDATA[0]]></loopSequence>
+                            <excludeSystemPages><![CDATA[1]]></excludeSystemPages>
+                            <orderBy><![CDATA[chrono_desc]]></orderBy>
+                        </record>
+                    </data>
+                </block>
+              </blocks>
+            </area>
+            <area name="Sidebar">
+                <blocks>
+                    <block type="share_this_page" name="" mc-block-id="">
+                        <style>
+                            <backgroundColor/>
+                            <backgroundRepeat/>
+                            <borderWidth/>
+                            <borderColor/>
+                            <borderStyle/>
+                            <borderRadius/>
+                            <baseFontSize/>
+                            <alignment/>
+                            <textColor/>
+                            <linkColor/>
+                            <paddingTop/>
+                            <paddingBottom/>
+                            <paddingLeft/>
+                            <paddingRight/>
+                            <marginTop/>
+                            <marginBottom/>
+                            <marginLeft/>
+                            <marginRight/>
+                            <rotate/>
+                            <boxShadowHorizontal/>
+                            <boxShadowVertical/>
+                            <boxShadowBlur/>
+                            <boxShadowSpread/>
+                            <boxShadowColor/>
+                            <customClass>block-sidebar-wrapped</customClass>
+                        </style>
+                        <data>
+                            <service>facebook</service>
+                            <service>twitter</service>
+                            <service>linkedin</service>
+                            <service>email</service>
+                        </data>
+                    </block>
+                </blocks>
             </area>
           </page>
         </pagetemplate>
@@ -115,48 +233,17 @@
 	    <stack name="Header Navigation" type="global_area">
 	      <area name="Main">
 	        <blocks>
-            <block type="manual_nav" name="" custom-template="global_nav" mc-block-id="b4">
-                <data table="btManualNav">
+            <block type="autonav" name="" custom-template="global_nav" mc-block-id="b4">
+                <data table="btNavigation">
                     <record>
-                        <navigationType><![CDATA[0]]></navigationType>
-                    </record>
-                </data>
-                <data table="btManualNavEntries">
-                    <record>
-                        <cID><![CDATA[0]]></cID>
-                        <linkURL><![CDATA[]]></linkURL>
-                        <title><![CDATA[ホーム]]></title>
-                        <sortOrder><![CDATA[0]]></sortOrder>
-                    </record>
-                    <record>
-                        <cID><![CDATA[0]]></cID>
-                        <linkURL><![CDATA[]]></linkURL>
-                        <title><![CDATA[概要]]></title>
-                        <sortOrder><![CDATA[1]]></sortOrder>
-                    </record>
-                    <record>
-                        <cID><![CDATA[0]]></cID>
-                        <linkURL><![CDATA[]]></linkURL>
-                        <title><![CDATA[紹介]]></title>
-                        <sortOrder><![CDATA[2]]></sortOrder>
-                    </record>
-                    <record>
-                        <cID><![CDATA[0]]></cID>
-                        <linkURL><![CDATA[]]></linkURL>
-                        <title><![CDATA[お問い合わせ]]></title>
-                        <sortOrder><![CDATA[3]]></sortOrder>
-                    </record>
-                    <record>
-                        <cID><![CDATA[0]]></cID>
-                        <linkURL><![CDATA[]]></linkURL>
-                        <title><![CDATA[新着情報]]></title>
-                        <sortOrder><![CDATA[4]]></sortOrder>
-                    </record>
-                    <record>
-                        <cID><![CDATA[0]]></cID>
-                        <linkURL><![CDATA[]]></linkURL>
-                        <title><![CDATA[Blog]]></title>
-                        <sortOrder><![CDATA[5]]></sortOrder>
+                        <orderBy><![CDATA[display_asc]]></orderBy>
+                        <displayPages><![CDATA[top]]></displayPages>
+                        <displayPagesCID/>
+                        <displayPagesIncludeSelf><![CDATA[0]]></displayPagesIncludeSelf>
+                        <displaySubPages><![CDATA[0]]></displaySubPages>
+                        <displaySubPageLevels><![CDATA[custom]]></displaySubPageLevels>
+                        <displaySubPageLevelsNum><![CDATA[1]]></displaySubPageLevelsNum>
+                        <displayUnavailablePages><![CDATA[0]]></displayUnavailablePages>
                     </record>
                 </data>
             </block>
@@ -691,6 +778,44 @@
                         <data table="btContentLocal">
                             <record>
                                 <content><![CDATA[<h1 class="page-title">Hello World</h1><p>ここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいります</p><h2>見出し2</h2><h3>見出し3</h3><p>段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落</p><div>div要素div要素div要素div要素div要素div要素div要素div要素</div><table><tr><th>項目名</th><td>内容がはいります</td></tr><tr><th>項目名</th><td>内容がはいります</td></tr></table>]]></content>
+                            </record>
+                        </data>
+                    </block>
+                </blocks>
+            </area>
+        </page>
+        <page name="Search" path="/search" filename="" pagetype="page" template="full" user="admin" description=""
+              package="">
+            <attributes>
+                <attributekey handle="meta_title">
+                    <value><![CDATA[]]></value>
+                </attributekey>
+                <attributekey handle="meta_description">
+                    <value><![CDATA[]]></value>
+                </attributekey>
+                <attributekey handle="meta_keywords">
+                    <value><![CDATA[]]></value>
+                </attributekey>
+                <attributekey handle="exclude_nav">
+                    <value><![CDATA[1]]></value>
+                </attributekey>
+                <attributekey handle="header_extra_content">
+                    <value><![CDATA[]]></value>
+                </attributekey>
+                <attributekey handle="exclude_sitemapxml">
+                    <value><![CDATA[0]]></value>
+                </attributekey>
+            </attributes>
+            <area name="Main">
+                <blocks>
+                    <block type="search" name="">
+                        <data table="btSearch">
+                            <record>
+                                <title><![CDATA[Search]]></title>
+                                <buttonText><![CDATA[Search]]></buttonText>
+                                <baseSearchPath><![CDATA[]]></baseSearchPath>
+                                <postTo_cID/>
+                                <resultsURL><![CDATA[]]></resultsURL>
                             </record>
                         </data>
                     </block>
