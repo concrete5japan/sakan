@@ -10,154 +10,301 @@
         <pagetemplate icon="left_sidebar.png" name="Left Sidebar" handle="left_sidebar" package="" internal=""/>
     </pagetemplates>
     <pagetypes>
-    <pagetype name="Page" handle="page" launch-in-composer="0">
-      <pagetemplates type="all" default="full"/>
-      <target handle="all" package=""/>
-      <composer>
-      <formlayout>
-        <set name="Basics">
-          <control custom-template="" required="1" custom-label="Page Name" type="core_page_property" handle="name"/>
-          <control custom-template="" custom-label="" type="core_page_property" handle="description"/>
-          <control custom-template="" custom-label="" type="core_page_property" handle="url_slug"/>
-          <control custom-template="" custom-label="" type="core_page_property" handle="page_template"/>
-          <control custom-template="" custom-label="" type="core_page_property" handle="publish_target"/>
-        </set>
-        <set name="Content">
-          <control custom-template="" custom-label="Body" output-control-id="EcjltFnE" type="block" handle="content"/>
-        </set>
-      </formlayout>
-      <output>
-        <pagetemplate handle="full">
-          <page>
-            <area name="Main">
-              <blocks>
-                  <block type="core_page_type_composer_control_output" name="">
-                    <control output-control-id="EcjltFnE"/>
-                  </block>
-              </blocks>
-            </area>
-          </page>
-        </pagetemplate>
-      </output>
-    </composer>
-    </pagetype>
-    <pagetype name="News" handle="news" is-frequently-added="1" launch-in-composer="1">
-      <pagetemplates type="all" default="right_sidebar"/>
-      <target handle="all" package=""/>
-      <composer>
-      <formlayout>
-        <set name="Basics">
-          <control custom-template="" required="1" custom-label="Entry Name" type="core_page_property" handle="name"/>
-          <control custom-template="" custom-label="" type="core_page_property" handle="description"/>
-          <control custom-template="" custom-label="" type="core_page_property" handle="url_slug"/>
-          <control custom-template="" custom-label="" type="core_page_property" handle="page_template"/>
-          <control custom-template="" custom-label="" type="core_page_property" handle="publish_target"/>
-        </set>
-        <set name="Content">
-          <control custom-template="" custom-label="Body" output-control-id="newscontent" type="block" handle="content"/>
-        </set>
-      </formlayout>
-      <output>
-        <pagetemplate handle="right_sidebar">
-          <page>
-            <area name="Main">
-              <blocks>
-                <block type="page_title" name="" custom-template="" mc-block-id="">
-                    <data table="btPageTitle">
-                        <record>
-                            <useCustomTitle><![CDATA[0]]></useCustomTitle>
-                            <titleText><![CDATA[[Page Title]]]></titleText>
-                        </record>
-                    </data>
-                </block>
-                <block type="core_page_type_composer_control_output" name="">
-                    <control output-control-id="newscontent"/>
-                </block>
-                <block type="next_previous" name="" mc-block-id="">
-                    <style>
-                        <backgroundColor/>
-                        <backgroundRepeat/>
-                        <borderWidth/>
-                        <borderColor/>
-                        <borderStyle/>
-                        <borderRadius/>
-                        <baseFontSize/>
-                        <alignment/>
-                        <textColor/>
-                        <linkColor/>
-                        <paddingTop/>
-                        <paddingBottom/>
-                        <paddingLeft/>
-                        <paddingRight/>
-                        <marginTop/>
-                        <marginBottom/>
-                        <marginLeft/>
-                        <marginRight/>
-                        <rotate/>
-                        <boxShadowHorizontal/>
-                        <boxShadowVertical/>
-                        <boxShadowBlur/>
-                        <boxShadowSpread/>
-                        <boxShadowColor/>
-                        <customClass>block-sidebar-wrapped</customClass>
-                    </style>
-                    <data table="btNextPrevious">
-                        <record>
-                            <nextLabel><![CDATA[Next Post]]></nextLabel>
-                            <previousLabel><![CDATA[Last Post]]></previousLabel>
-                            <parentLabel><![CDATA[]]></parentLabel>
-                            <loopSequence><![CDATA[0]]></loopSequence>
-                            <excludeSystemPages><![CDATA[1]]></excludeSystemPages>
-                            <orderBy><![CDATA[chrono_desc]]></orderBy>
-                        </record>
-                    </data>
-                </block>
-              </blocks>
-            </area>
-            <area name="Sidebar">
+      <pagetype name="Page" handle="page" launch-in-composer="0">
+        <pagetemplates type="all" default="full"/>
+        <target handle="all" package=""/>
+        <composer>
+        <formlayout>
+          <set name="Basics">
+            <control custom-template="" required="1" custom-label="Page Name" type="core_page_property" handle="name"/>
+            <control custom-template="" custom-label="" type="core_page_property" handle="description"/>
+            <control custom-template="" custom-label="" type="core_page_property" handle="url_slug"/>
+            <control custom-template="" custom-label="" type="core_page_property" handle="page_template"/>
+            <control custom-template="" custom-label="" type="core_page_property" handle="publish_target"/>
+          </set>
+          <set name="Content">
+            <control custom-template="" custom-label="Body" output-control-id="EcjltFnE" type="block" handle="content"/>
+          </set>
+        </formlayout>
+        <output>
+          <pagetemplate handle="full">
+            <page>
+              <area name="Main">
                 <blocks>
-                    <block type="share_this_page" name="" mc-block-id="">
-                        <style>
-                            <backgroundColor/>
-                            <backgroundRepeat/>
-                            <borderWidth/>
-                            <borderColor/>
-                            <borderStyle/>
-                            <borderRadius/>
-                            <baseFontSize/>
-                            <alignment/>
-                            <textColor/>
-                            <linkColor/>
-                            <paddingTop/>
-                            <paddingBottom/>
-                            <paddingLeft/>
-                            <paddingRight/>
-                            <marginTop/>
-                            <marginBottom/>
-                            <marginLeft/>
-                            <marginRight/>
-                            <rotate/>
-                            <boxShadowHorizontal/>
-                            <boxShadowVertical/>
-                            <boxShadowBlur/>
-                            <boxShadowSpread/>
-                            <boxShadowColor/>
-                            <customClass>block-sidebar-wrapped</customClass>
-                        </style>
-                        <data>
-                            <service>facebook</service>
-                            <service>twitter</service>
-                            <service>linkedin</service>
-                            <service>email</service>
-                        </data>
+                    <block type="core_page_type_composer_control_output" name="">
+                      <control output-control-id="EcjltFnE"/>
                     </block>
                 </blocks>
-            </area>
-          </page>
-        </pagetemplate>
-      </output>
-    </composer>
-    </pagetype>
+              </area>
+            </page>
+          </pagetemplate>
+        </output>
+      </composer>
+      </pagetype>
+      <pagetype name="News" handle="news" is-frequently-added="1" launch-in-composer="1">
+        <pagetemplates type="all" default="right_sidebar"/>
+        <target handle="all" package="" path="/news"/>
+        <composer>
+        <formlayout>
+          <set name="Basics">
+            <control custom-template="" required="1" custom-label="Entry Name" type="core_page_property" handle="name"/>
+            <control custom-template="" custom-label="" type="core_page_property" handle="description"/>
+            <control custom-template="" custom-label="" type="core_page_property" handle="url_slug"/>
+            <control custom-template="" custom-label="" type="core_page_property" handle="page_template"/>
+            <control custom-template="" custom-label="" type="core_page_property" handle="publish_target"/>
+          </set>
+          <set name="Content">
+            <control custom-template="" custom-label="Body" output-control-id="newscontent" type="block" handle="content"/>
+          </set>
+        </formlayout>
+        <output>
+          <pagetemplate handle="right_sidebar">
+            <page>
+              <area name="Main">
+                <blocks>
+                  <block type="page_title" name="" custom-template="" mc-block-id="">
+                      <data table="btPageTitle">
+                          <record>
+                              <useCustomTitle><![CDATA[0]]></useCustomTitle>
+                              <titleText><![CDATA[[Page Title]]]></titleText>
+                          </record>
+                      </data>
+                  </block>
+                  <block type="core_page_type_composer_control_output" name="">
+                      <control output-control-id="newscontent"/>
+                  </block>
+                  <block type="next_previous" name="" mc-block-id="">
+                      <style>
+                          <backgroundColor/>
+                          <backgroundRepeat/>
+                          <borderWidth/>
+                          <borderColor/>
+                          <borderStyle/>
+                          <borderRadius/>
+                          <baseFontSize/>
+                          <alignment/>
+                          <textColor/>
+                          <linkColor/>
+                          <paddingTop/>
+                          <paddingBottom/>
+                          <paddingLeft/>
+                          <paddingRight/>
+                          <marginTop/>
+                          <marginBottom/>
+                          <marginLeft/>
+                          <marginRight/>
+                          <rotate/>
+                          <boxShadowHorizontal/>
+                          <boxShadowVertical/>
+                          <boxShadowBlur/>
+                          <boxShadowSpread/>
+                          <boxShadowColor/>
+                          <customClass>block-sidebar-wrapped</customClass>
+                      </style>
+                      <data table="btNextPrevious">
+                          <record>
+                              <nextLabel><![CDATA[Next Post]]></nextLabel>
+                              <previousLabel><![CDATA[Last Post]]></previousLabel>
+                              <parentLabel><![CDATA[]]></parentLabel>
+                              <loopSequence><![CDATA[0]]></loopSequence>
+                              <excludeSystemPages><![CDATA[1]]></excludeSystemPages>
+                              <orderBy><![CDATA[chrono_desc]]></orderBy>
+                          </record>
+                      </data>
+                  </block>
+                </blocks>
+              </area>
+              <area name="Sidebar">
+                  <blocks>
+                      <block type="date_navigation" name="">
+                          <style>
+                              <customClass>block-sidebar-padded</customClass>
+                          </style>
+                          <data table="btDateNavigation">
+                              <record>
+                                  <title><![CDATA[Archives]]></title>
+                                  <redirectToResults>0</redirectToResults>
+                                  <filterByParent>1</filterByParent>
+                                  <cParentID>{ccm:export:page:/news}</cParentID>
+                                  <cTargetID/>
+                                  <ptID>{ccm:export:pagetype:news}</ptID>
+                              </record>
+                          </data>
+                      </block>
+                      <block type="share_this_page" name="" mc-block-id="">
+                          <style>
+                              <backgroundColor/>
+                              <backgroundRepeat/>
+                              <borderWidth/>
+                              <borderColor/>
+                              <borderStyle/>
+                              <borderRadius/>
+                              <baseFontSize/>
+                              <alignment/>
+                              <textColor/>
+                              <linkColor/>
+                              <paddingTop/>
+                              <paddingBottom/>
+                              <paddingLeft/>
+                              <paddingRight/>
+                              <marginTop/>
+                              <marginBottom/>
+                              <marginLeft/>
+                              <marginRight/>
+                              <rotate/>
+                              <boxShadowHorizontal/>
+                              <boxShadowVertical/>
+                              <boxShadowBlur/>
+                              <boxShadowSpread/>
+                              <boxShadowColor/>
+                              <customClass>block-sidebar-wrapped</customClass>
+                          </style>
+                          <data>
+                              <service>facebook</service>
+                              <service>twitter</service>
+                              <service>linkedin</service>
+                              <service>email</service>
+                          </data>
+                      </block>
+                  </blocks>
+              </area>
+            </page>
+          </pagetemplate>
+        </output>
+      </composer>
+      </pagetype>
+      <pagetype name="Blog" handle="blog" is-frequently-added="1" launch-in-composer="1">
+        <pagetemplates type="all" default="right_sidebar"/>
+        <target handle="all" package="" path="/blog"/>
+        <composer>
+        <formlayout>
+          <set name="Basics">
+            <control custom-template="" required="1" custom-label="Entry Name" type="core_page_property" handle="name"/>
+            <control custom-template="" custom-label="" type="core_page_property" handle="description"/>
+            <control custom-template="" custom-label="" type="core_page_property" handle="url_slug"/>
+            <control custom-template="" custom-label="" type="core_page_property" handle="page_template"/>
+            <control custom-template="" custom-label="" type="core_page_property" handle="publish_target"/>
+          </set>
+          <set name="Content">
+            <control custom-template="" custom-label="Body" output-control-id="blogcontent" type="block" handle="content"/>
+          </set>
+        </formlayout>
+        <output>
+          <pagetemplate handle="right_sidebar">
+            <page>
+              <area name="Main">
+                <blocks>
+                  <block type="page_title" name="" custom-template="" mc-block-id="">
+                      <data table="btPageTitle">
+                          <record>
+                              <useCustomTitle><![CDATA[0]]></useCustomTitle>
+                              <titleText><![CDATA[[Page Title]]]></titleText>
+                          </record>
+                      </data>
+                  </block>
+                  <block type="core_page_type_composer_control_output" name="">
+                      <control output-control-id="blogcontent"/>
+                  </block>
+                  <block type="next_previous" name="" mc-block-id="">
+                      <style>
+                          <backgroundColor/>
+                          <backgroundRepeat/>
+                          <borderWidth/>
+                          <borderColor/>
+                          <borderStyle/>
+                          <borderRadius/>
+                          <baseFontSize/>
+                          <alignment/>
+                          <textColor/>
+                          <linkColor/>
+                          <paddingTop/>
+                          <paddingBottom/>
+                          <paddingLeft/>
+                          <paddingRight/>
+                          <marginTop/>
+                          <marginBottom/>
+                          <marginLeft/>
+                          <marginRight/>
+                          <rotate/>
+                          <boxShadowHorizontal/>
+                          <boxShadowVertical/>
+                          <boxShadowBlur/>
+                          <boxShadowSpread/>
+                          <boxShadowColor/>
+                          <customClass>block-sidebar-wrapped</customClass>
+                      </style>
+                      <data table="btNextPrevious">
+                          <record>
+                              <nextLabel><![CDATA[Next Post]]></nextLabel>
+                              <previousLabel><![CDATA[Last Post]]></previousLabel>
+                              <parentLabel><![CDATA[]]></parentLabel>
+                              <loopSequence><![CDATA[0]]></loopSequence>
+                              <excludeSystemPages><![CDATA[1]]></excludeSystemPages>
+                              <orderBy><![CDATA[chrono_desc]]></orderBy>
+                          </record>
+                      </data>
+                  </block>
+                </blocks>
+              </area>
+              <area name="Sidebar">
+                  <blocks>
+                      <block type="date_navigation" name="">
+                          <style>
+                              <customClass>block-sidebar-padded</customClass>
+                          </style>
+                          <data table="btDateNavigation">
+                              <record>
+                                  <title><![CDATA[Archives]]></title>
+                                  <redirectToResults>0</redirectToResults>
+                                  <filterByParent>1</filterByParent>
+                                  <cParentID>{ccm:export:page:/blog}</cParentID>
+                                  <cTargetID/>
+                                  <ptID>{ccm:export:pagetype:blog}</ptID>
+                              </record>
+                          </data>
+                      </block>
+                      <block type="share_this_page" name="" mc-block-id="">
+                          <style>
+                              <backgroundColor/>
+                              <backgroundRepeat/>
+                              <borderWidth/>
+                              <borderColor/>
+                              <borderStyle/>
+                              <borderRadius/>
+                              <baseFontSize/>
+                              <alignment/>
+                              <textColor/>
+                              <linkColor/>
+                              <paddingTop/>
+                              <paddingBottom/>
+                              <paddingLeft/>
+                              <paddingRight/>
+                              <marginTop/>
+                              <marginBottom/>
+                              <marginLeft/>
+                              <marginRight/>
+                              <rotate/>
+                              <boxShadowHorizontal/>
+                              <boxShadowVertical/>
+                              <boxShadowBlur/>
+                              <boxShadowSpread/>
+                              <boxShadowColor/>
+                              <customClass>block-sidebar-wrapped</customClass>
+                          </style>
+                          <data>
+                              <service>facebook</service>
+                              <service>twitter</service>
+                              <service>linkedin</service>
+                              <service>email</service>
+                          </data>
+                      </block>
+                  </blocks>
+              </area>
+            </page>
+          </pagetemplate>
+        </output>
+      </composer>
+      </pagetype>
     </pagetypes>
 	  <stacks>
 	    <stack name="Header Site Title" type="global_area">
@@ -655,6 +802,13 @@
     <page name="新着情報" path="/news" filename="" pagetype="page" template="right_sidebar" user="admin" description="" package="">
       <area name="Main">
       	<blocks>
+          <block type="content" name="">
+            <data table="btContentLocal">
+              <record>
+                <content><![CDATA[<h1 class="page-title">新着情報</h1>]]></content>
+              </record>
+            </data>
+          </block>
 	        <block type="page_list" name="" mc-block-id="b">
 	            <data table="btPageList">
 	                <record>
@@ -665,7 +819,7 @@
 	                    <cThis><![CDATA[1]]></cThis>
 	                    <includeName><![CDATA[1]]></includeName>
 	                    <includeDescription><![CDATA[0]]></includeDescription>
-	                    <ptID>{ccm:export:pagetype:page}</ptID>
+	                    <ptID>{ccm:export:pagetype:news}</ptID>
 	                    <pageListTitle>Related Posts</pageListTitle>
 	                </record>
 	            </data>
@@ -685,14 +839,14 @@
                         <filterByParent>1</filterByParent>
                         <cParentID>{ccm:export:page:/news}</cParentID>
                         <cTargetID/>
-                        <ptID>{ccm:export:pagetype:page}</ptID>
+                        <ptID>{ccm:export:pagetype:news}</ptID>
                     </record>
                 </data>
             </block>
         </blocks>
     </area>
     </page>
-    <page name="Hello World" path="/news/news1" public-date="2015-02-14 15:30:00" filename="" pagetype="page" template="full" user="admin" description="ここにHello Worldの説明がはいります" package="">
+    <page name="Hello World" path="/news/news1" public-date="2015-02-14 15:30:00" filename="" pagetype="news" template="right_sidebar" user="admin" description="ここにHello Worldの説明がはいります" package="">
       <area name="Main">
         <blocks>
           <block type="content" name="">
@@ -704,44 +858,86 @@
           </block>
         </blocks>
       </area>
-    <area name="Sidebar">
-        <blocks>
-            <block type="date_navigation" name="">
-                <style>
-                    <customClass>block-sidebar-padded</customClass>
-                </style>
-                <data table="btDateNavigation">
-                    <record>
-                        <title><![CDATA[Archives]]></title>
-                        <redirectToResults>0</redirectToResults>
-                        <filterByParent>1</filterByParent>
-                        <cParentID>{ccm:export:page:/news}</cParentID>
-                        <cTargetID/>
-                        <ptID>{ccm:export:pagetype:page}</ptID>
-                    </record>
-                </data>
-            </block>
-        </blocks>
-    </area>
+      <area name="Sidebar">
+          <blocks>
+              <block type="date_navigation" name="">
+                  <style>
+                      <customClass>block-sidebar-padded</customClass>
+                  </style>
+                  <data table="btDateNavigation">
+                      <record>
+                          <title><![CDATA[Archives]]></title>
+                          <redirectToResults>0</redirectToResults>
+                          <filterByParent>1</filterByParent>
+                          <cParentID>{ccm:export:page:/news}</cParentID>
+                          <cTargetID/>
+                          <ptID>{ccm:export:pagetype:news}</ptID>
+                      </record>
+                  </data>
+              </block>
+              <block type="share_this_page" name="" mc-block-id="">
+                  <style>
+                      <backgroundColor/>
+                      <backgroundRepeat/>
+                      <borderWidth/>
+                      <borderColor/>
+                      <borderStyle/>
+                      <borderRadius/>
+                      <baseFontSize/>
+                      <alignment/>
+                      <textColor/>
+                      <linkColor/>
+                      <paddingTop/>
+                      <paddingBottom/>
+                      <paddingLeft/>
+                      <paddingRight/>
+                      <marginTop/>
+                      <marginBottom/>
+                      <marginLeft/>
+                      <marginRight/>
+                      <rotate/>
+                      <boxShadowHorizontal/>
+                      <boxShadowVertical/>
+                      <boxShadowBlur/>
+                      <boxShadowSpread/>
+                      <boxShadowColor/>
+                      <customClass>block-sidebar-wrapped</customClass>
+                  </style>
+                  <data>
+                      <service>facebook</service>
+                      <service>twitter</service>
+                      <service>linkedin</service>
+                      <service>email</service>
+                  </data>
+              </block>
+          </blocks>
+      </area>
     </page>
     <page name="Blog" path="/blog" filename="" pagetype="page" template="right_sidebar" user="admin" description="" package="">
       <area name="Main">
       	<blocks>
-	        <block type="page_list" name="" mc-block-id="b">
-	            <data table="btPageList">
-	                <record>
-	                    <num><![CDATA[3]]></num>
-	                    <orderBy><![CDATA[chrono_desc]]></orderBy>
-	                    <cParentID>{ccm:export:page:/blog}</cParentID>
-	                    <filterByRelated>1</filterByRelated>
-	                    <cThis><![CDATA[1]]></cThis>
-	                    <includeName><![CDATA[1]]></includeName>
-	                    <includeDescription><![CDATA[0]]></includeDescription>
-	                    <ptID>{ccm:export:pagetype:page}</ptID>
-	                    <pageListTitle>Related Posts</pageListTitle>
-	                </record>
-	            </data>
-	        </block>
+          <block type="content" name="">
+            <data table="btContentLocal">
+              <record>
+                <content><![CDATA[<h1 class="page-title">ブログ</h1>]]></content>
+              </record>
+            </data>
+          </block>
+          <block type="page_list" name="" mc-block-id="b">
+              <data table="btPageList">
+                  <record>
+                      <num><![CDATA[3]]></num>
+                      <orderBy><![CDATA[chrono_desc]]></orderBy>
+                      <cParentID>{ccm:export:page:/blog}</cParentID>
+                      <filterByRelated>1</filterByRelated>
+                      <cThis><![CDATA[1]]></cThis>
+                      <includeName><![CDATA[1]]></includeName>
+                      <includeDescription><![CDATA[0]]></includeDescription>
+                      <ptID>{ccm:export:pagetype:blog}</ptID>
+                      <pageListTitle>Related Posts</pageListTitle>
+                  </record>
+              </data>
+          </block>
         </blocks>
       </area>
       <area name="Sidebar">
@@ -764,7 +960,7 @@
         </blocks>
       </area>
     </page>
-        <page name="Hello World!" public-date="2015-02-01 12:00:00" path="/blog/hello-world" filename="" pagetype="page" template="full" user="admin" description="ここにHello Worldの説明がはいります" package="">
+        <page name="Hello World!" public-date="2015-02-01 12:00:00" path="/blog/hello-world" filename="" pagetype="blog" template="right_sidebar" user="admin" description="ここにHello Worldの説明がはいります" package="">
             <attributes>
                 <attributekey handle="blog_entry_topics">
                     <topics>
@@ -779,6 +975,60 @@
                             <record>
                                 <content><![CDATA[<h1 class="page-title">Hello World</h1><p>ここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいります</p><h2>見出し2</h2><h3>見出し3</h3><p>段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落</p><div>div要素div要素div要素div要素div要素div要素div要素div要素</div><table><tr><th>項目名</th><td>内容がはいります</td></tr><tr><th>項目名</th><td>内容がはいります</td></tr></table>]]></content>
                             </record>
+                        </data>
+                    </block>
+                </blocks>
+            </area>
+            <area name="Sidebar">
+                <blocks>
+                    <block type="date_navigation" name="">
+                        <style>
+                            <customClass>block-sidebar-padded</customClass>
+                        </style>
+                        <data table="btDateNavigation">
+                            <record>
+                                <title><![CDATA[Archives]]></title>
+                                <redirectToResults>0</redirectToResults>
+                                <filterByParent>1</filterByParent>
+                                <cParentID>{ccm:export:page:/blog}</cParentID>
+                                <cTargetID/>
+                                <ptID>{ccm:export:pagetype:blog}</ptID>
+                            </record>
+                        </data>
+                    </block>
+                    <block type="share_this_page" name="" mc-block-id="">
+                        <style>
+                            <backgroundColor/>
+                            <backgroundRepeat/>
+                            <borderWidth/>
+                            <borderColor/>
+                            <borderStyle/>
+                            <borderRadius/>
+                            <baseFontSize/>
+                            <alignment/>
+                            <textColor/>
+                            <linkColor/>
+                            <paddingTop/>
+                            <paddingBottom/>
+                            <paddingLeft/>
+                            <paddingRight/>
+                            <marginTop/>
+                            <marginBottom/>
+                            <marginLeft/>
+                            <marginRight/>
+                            <rotate/>
+                            <boxShadowHorizontal/>
+                            <boxShadowVertical/>
+                            <boxShadowBlur/>
+                            <boxShadowSpread/>
+                            <boxShadowColor/>
+                            <customClass>block-sidebar-wrapped</customClass>
+                        </style>
+                        <data>
+                            <service>facebook</service>
+                            <service>twitter</service>
+                            <service>linkedin</service>
+                            <service>email</service>
                         </data>
                     </block>
                 </blocks>
@@ -808,8 +1058,7 @@
             </attributes>
             <area name="Main">
                 <blocks>
-                    <block type="search" name="">
-                        <data table="btSearch">
+                    <block type="search" name=""> <data table="btSearch">
                             <record>
                                 <title><![CDATA[Search]]></title>
                                 <buttonText><![CDATA[Search]]></buttonText>
