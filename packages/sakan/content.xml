@@ -116,7 +116,7 @@
               </area>
               <area name="Sidebar">
                   <blocks>
-                      <block type="date_navigation" name="">
+                      <block type="date_navigation" name=""  mc-block-id="b10">
                           <style>
                               <customClass>block-sidebar-padded</customClass>
                           </style>
@@ -129,41 +129,6 @@
                                   <cTargetID/>
                                   <ptID>{ccm:export:pagetype:news}</ptID>
                               </record>
-                          </data>
-                      </block>
-                      <block type="share_this_page" name="" mc-block-id="">
-                          <style>
-                              <backgroundColor/>
-                              <backgroundRepeat/>
-                              <borderWidth/>
-                              <borderColor/>
-                              <borderStyle/>
-                              <borderRadius/>
-                              <baseFontSize/>
-                              <alignment/>
-                              <textColor/>
-                              <linkColor/>
-                              <paddingTop/>
-                              <paddingBottom/>
-                              <paddingLeft/>
-                              <paddingRight/>
-                              <marginTop/>
-                              <marginBottom/>
-                              <marginLeft/>
-                              <marginRight/>
-                              <rotate/>
-                              <boxShadowHorizontal/>
-                              <boxShadowVertical/>
-                              <boxShadowBlur/>
-                              <boxShadowSpread/>
-                              <boxShadowColor/>
-                              <customClass>block-sidebar-wrapped</customClass>
-                          </style>
-                          <data>
-                              <service>facebook</service>
-                              <service>twitter</service>
-                              <service>linkedin</service>
-                              <service>email</service>
                           </data>
                       </block>
                   </blocks>
@@ -248,7 +213,7 @@
               </area>
               <area name="Sidebar">
                   <blocks>
-                      <block type="date_navigation" name="">
+                      <block type="date_navigation" name="" mc-block-id="b11">
                           <style>
                               <customClass>block-sidebar-padded</customClass>
                           </style>
@@ -261,41 +226,6 @@
                                   <cTargetID/>
                                   <ptID>{ccm:export:pagetype:blog}</ptID>
                               </record>
-                          </data>
-                      </block>
-                      <block type="share_this_page" name="" mc-block-id="">
-                          <style>
-                              <backgroundColor/>
-                              <backgroundRepeat/>
-                              <borderWidth/>
-                              <borderColor/>
-                              <borderStyle/>
-                              <borderRadius/>
-                              <baseFontSize/>
-                              <alignment/>
-                              <textColor/>
-                              <linkColor/>
-                              <paddingTop/>
-                              <paddingBottom/>
-                              <paddingLeft/>
-                              <paddingRight/>
-                              <marginTop/>
-                              <marginBottom/>
-                              <marginLeft/>
-                              <marginRight/>
-                              <rotate/>
-                              <boxShadowHorizontal/>
-                              <boxShadowVertical/>
-                              <boxShadowBlur/>
-                              <boxShadowSpread/>
-                              <boxShadowColor/>
-                              <customClass>block-sidebar-wrapped</customClass>
-                          </style>
-                          <data>
-                              <service>facebook</service>
-                              <service>twitter</service>
-                              <service>linkedin</service>
-                              <service>email</service>
                           </data>
                       </block>
                   </blocks>
@@ -449,10 +379,21 @@
 	        </blocks>
 	      </area>
 	    </stack>
+      <stack name="Footer share" type="global_area">
+        <area name="Main">
+          <blocks>
+            <block type="social_links" name="" mc-block-id="b9">
+                <link service="twitter"/>
+                <link service="github"/>
+                <link service="facebook"/>
+            </block>
+          </blocks>
+        </area>
+      </stack>
 	    <stack name="Bread nav" type="global_area">
 	      <area name="Main">
 	        <blocks>
-	          <block type="autonav" name="" custom-template="bread_nav" mc-block-id="b10">
+	          <block type="autonav" name="" custom-template="bread_nav" mc-block-id="b9">
 	            <style>
 	              <backgroundColor/>
 	              <backgroundRepeat>no-repeat</backgroundRepeat>
@@ -875,41 +816,6 @@
                       </record>
                   </data>
               </block>
-              <block type="share_this_page" name="" mc-block-id="">
-                  <style>
-                      <backgroundColor/>
-                      <backgroundRepeat/>
-                      <borderWidth/>
-                      <borderColor/>
-                      <borderStyle/>
-                      <borderRadius/>
-                      <baseFontSize/>
-                      <alignment/>
-                      <textColor/>
-                      <linkColor/>
-                      <paddingTop/>
-                      <paddingBottom/>
-                      <paddingLeft/>
-                      <paddingRight/>
-                      <marginTop/>
-                      <marginBottom/>
-                      <marginLeft/>
-                      <marginRight/>
-                      <rotate/>
-                      <boxShadowHorizontal/>
-                      <boxShadowVertical/>
-                      <boxShadowBlur/>
-                      <boxShadowSpread/>
-                      <boxShadowColor/>
-                      <customClass>block-sidebar-wrapped</customClass>
-                  </style>
-                  <data>
-                      <service>facebook</service>
-                      <service>twitter</service>
-                      <service>linkedin</service>
-                      <service>email</service>
-                  </data>
-              </block>
           </blocks>
       </area>
     </page>
@@ -953,7 +859,7 @@
                         <filterByParent>1</filterByParent>
                         <cParentID>{ccm:export:page:/blog}</cParentID>
                         <cTargetID/>
-                        <ptID>{ccm:export:pagetype:page}</ptID>
+                        <ptID>{ccm:export:pagetype:blog}</ptID>
                     </record>
                 </data>
             </block>
@@ -994,41 +900,6 @@
                                 <cTargetID/>
                                 <ptID>{ccm:export:pagetype:blog}</ptID>
                             </record>
-                        </data>
-                    </block>
-                    <block type="share_this_page" name="" mc-block-id="">
-                        <style>
-                            <backgroundColor/>
-                            <backgroundRepeat/>
-                            <borderWidth/>
-                            <borderColor/>
-                            <borderStyle/>
-                            <borderRadius/>
-                            <baseFontSize/>
-                            <alignment/>
-                            <textColor/>
-                            <linkColor/>
-                            <paddingTop/>
-                            <paddingBottom/>
-                            <paddingLeft/>
-                            <paddingRight/>
-                            <marginTop/>
-                            <marginBottom/>
-                            <marginLeft/>
-                            <marginRight/>
-                            <rotate/>
-                            <boxShadowHorizontal/>
-                            <boxShadowVertical/>
-                            <boxShadowBlur/>
-                            <boxShadowSpread/>
-                            <boxShadowColor/>
-                            <customClass>block-sidebar-wrapped</customClass>
-                        </style>
-                        <data>
-                            <service>facebook</service>
-                            <service>twitter</service>
-                            <service>linkedin</service>
-                            <service>email</service>
                         </data>
                     </block>
                 </blocks>
@@ -1072,4 +943,9 @@
             </area>
         </page>
     </pages>
+    <sociallinks>
+        <link service="facebook" url="http://facebook.com/concrete5"/>
+        <link service="github" url="http://github.com/concrete5"/>
+        <link service="twitter" url="http://twitter.com/concrete5"/>
+    </sociallinks>
 </concrete5-cif>
