@@ -8,7 +8,7 @@ $this->inc('elements/header.php'); ?>
 <main>
   <div class="container">
    <div class="row">
-    <div class="main-contents <?php echo $c->getPageWrapperClass()?>">
+    <div class="main-contents">
       <?php
           $a = new Area('Main');
           $a->setAreaGridMaximumColumns(12);

@@ -42,8 +42,8 @@
       </composer>
       </pagetype>
       <pagetype name="News" handle="news" is-frequently-added="1" launch-in-composer="1">
-        <pagetemplates type="all" default="right_sidebar"/>
-        <target handle="all" package="" path="/news"/>
+        <pagetemplates type="default" default="right_sidebar"/>
+        <target handle="parent_page" package="" path="/news"/>
         <composer>
         <formlayout>
           <set name="Basics">
@@ -140,7 +140,7 @@
       </pagetype>
       <pagetype name="Blog" handle="blog" is-frequently-added="1" launch-in-composer="1">
         <pagetemplates type="all" default="right_sidebar"/>
-        <target handle="all" package="" path="/blog"/>
+        <target handle="parent_page" package="" path="/blog"/>
         <composer>
         <formlayout>
           <set name="Basics">
@@ -379,7 +379,7 @@
 	        </blocks>
 	      </area>
 	    </stack>
-      <stack name="Footer share" type="global_area">
+      <stack name="Footer Social" type="global_area">
         <area name="Main">
           <blocks>
             <block type="social_links" name="" mc-block-id="b9">

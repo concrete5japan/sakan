@@ -13,48 +13,42 @@ defined('C5_EXECUTE') or die(_("Access Denied."));
 class Controller extends Package
 {
 
-    protected $pkgHandle = 'sakan'; //パッケージハンドル
-    protected $appVersionRequired = '5.7.3'; //concrete5のバージョン
-    protected $pkgVersion = '1.0'; //パッケージのバージョン
-    protected $pkgAllowsFullContentSwap = true; //インストール時にコンテンツを上書きする
+    protected $pkgHandle = 'sakan';
+    protected $appVersionRequired = '5.7.3';
+    protected $pkgVersion = '0.8';
+    protected $pkgAllowsFullContentSwap = true;
 
     public function getPackageDescription()
     {
-        return t("Sakan theme is also help develop concrete5 site easier.");  //パッケージの説明
+        return t("Sakan theme is also help develop concrete5 site easier.");
     }
 
     public function getPackageName()
     {
-        return t("sakan"); //パッケージ名
+        return t("sakan");
     }
     
     public function import_files() 
     {
-            // now we add in any files that this package has
-            if (is_dir($this->getPackagePath() . '/content_files'))
-             {
+        if (is_dir($this->getPackagePath() . '/content_files'))
+         {
 
-                $fh = new FileImporter();
-                $contents = Loader::helper('file')->getDirectoryContents($this->getPackagePath() . '/content_files');
+            $fh = new FileImporter();
+            $fm = Core::make('helper/file');
+            $contents = $fm->getDirectoryContents($this->getPackagePath() . '/content_files');
 
-                foreach ($contents as $filename) 
-                {
-                    $f = $fh->import($this->getPackagePath() . '/content_files/' . $filename, $filename);
-                }
+            foreach ($contents as $filename) 
+            {
+                $f = $fh->import($this->getPackagePath() . '/content_files/' . $filename, $filename);
             }
+        }
     }
     
     public function install()
     {
         $pkg = parent::install();
-        Theme::add('sakan', $pkg); //テーマのインストール 
-        BlockType::installBlockTypeFromPackage('manual_nav', $pkg); //manual navのインストール
+        Theme::add('sakan', $pkg);
+        BlockType::installBlockTypeFromPackage('manual_nav', $pkg);
     }
 
-//    public function uninstall() 
-//    {
-//        parent::uninstall();
-//        $db = Loader::db();
-//        $db->Execute('DROP TABLE btManualNav, btManualNavLinks');
-//    }
 }
