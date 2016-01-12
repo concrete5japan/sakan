@@ -22,11 +22,15 @@
 	<header>
 		<div class="navbar-inverse">
 			<div class="container">
-						<?php
-		                  $a = new GlobalArea('Header Site Title');
-		                  $a->display($c);
-		                ?>
-				
+				<?php
+					$a = new GlobalArea('Header Site Title');
+					$a->display($c);
+
+					$header_search = new GlobalArea('Header Search');
+					$header_sub = new GlobalArea('Header Sub Navigation');
+
+					if ($header_sub->getTotalBlocksInArea() + $header_search->getTotalBlocksInArea() > 0 || $c->isEditMode()) :
+				?>
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#masthead" aria-expanded="false" aria-controls="navbar">
 						<span class="sr-only">Toggle navigation</span>
@@ -36,15 +40,14 @@
 					</button>
 				</div>
 				<div id="masthead" class="collapse navbar-collapse">
-		                <?php
-		                  $a = new GlobalArea('Header Search');
-		                  $a->display($c);
-		                ?>
-				                <?php
-				                  $a = new GlobalArea('Header Sub Navigation');
-				                  $a->display($c);
-				                ?>
+				<?php
+					$header_search->display($c);
+					$header_sub->display($c);
+				?>
 				</div><!-- /.nav-collapse -->
+				<?php
+					endif;
+				?>
 			</div>
 		</div>
     <?php
