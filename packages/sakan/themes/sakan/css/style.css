@@ -8630,7 +8630,7 @@ a:hover img {
 }
 /* line 88, ../scss/styles.scss */
 #globalNav li a {
-  padding: 15px;
+  padding: 15px 0;
   color: #333;
   font-size: 1.1em;
   line-height: 1.15;
