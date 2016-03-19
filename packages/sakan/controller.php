@@ -2,7 +2,6 @@
 namespace Concrete\Package\Sakan;
 
 use Concrete\Core\Package\Package;
-use BlockType;
 use Concrete\Core\Block\BlockController;
 use Concrete\Core\Page\Theme\Theme;
 use Loader;
@@ -48,7 +47,6 @@ class Controller extends Package
     {
         $pkg = parent::install();
         Theme::add('sakan', $pkg);
-        BlockType::installBlockTypeFromPackage('manual_nav', $pkg);
     }
 
 }
