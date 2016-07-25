@@ -49,4 +49,14 @@ class Controller extends Package
         Theme::add('sakan', $pkg);
     }
 
+    public function on_start()
+    {
+        $al = \Concrete\Core\Asset\AssetList::getInstance();
+        $al->register(
+            'css',  'sakan-bootstrap', 'themes/sakan/css/bootstrap-modified.css', array(), 'sakan'
+        );
+        $al->register(
+            'css',  'sakan-style', 'themes/sakan/css/style.css', array(), 'sakan'
+        );
+    }
 }

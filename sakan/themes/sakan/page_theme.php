@@ -22,6 +22,8 @@ class PageTheme extends Theme
         $this->providesAsset('css', 'core/frontend/*');
         $this->providesAsset('css', 'blocks/feature/templates/hover_description');
         $this->requireAsset('css', 'font-awesome');
+        $this->requireAsset('css', 'sakan-bootstrap');
+        $this->requireAsset('css', 'sakan-style');
         $this->requireAsset('javascript', 'jquery');
         $this->requireAsset('javascript', 'picturefill');
     }
