@@ -48,10 +48,12 @@ if (is_object($f)) {
         $imageTag->title(h($title));
     }
 
+    echo '<div class="row">';
     printf($divformat,$imageWrapperClass,$imageTag);
 
     $textcontent = nl2br(strip_tags($content));
     printf($divformat,$textWrapperClass,$textcontent);
+    echo '</div>';
 
 } else if ($c->isEditMode()) { ?>
 
