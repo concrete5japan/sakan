@@ -26,6 +26,7 @@ class PageTheme extends Theme
         $this->requireAsset('css', 'sakan-style');
         $this->requireAsset('javascript', 'jquery');
         $this->requireAsset('javascript', 'picturefill');
+        $this->requireAsset('javascript', 'sakan-bootstrap');
     }
     
     protected $pThemeGridFrameworkHandle = 'bootstrap3';

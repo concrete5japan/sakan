@@ -75,5 +75,8 @@ class Controller extends Package
         $al->register(
             'css',  'sakan-style', 'themes/sakan/css/style.css', array(), 'sakan'
         );
+        $al->register(
+            'javascript',  'sakan-bootstrap', 'themes/sakan/js/bootstrap.min.js', array(), 'sakan'
+        );
     }
 }

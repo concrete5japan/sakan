@@ -73,7 +73,6 @@ defined('C5_EXECUTE') or die("Access Denied."); ?>
 </div><!-- /getPageWrapperClass -->
 
 
-<script src="<?php echo $this->getThemePath(); ?>/js/bootstrap.min.js"></script>
 <?php Loader::element('footer_required'); ?>
 </body>
 </html>
