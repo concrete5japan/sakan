@@ -6,6 +6,7 @@ use Concrete\Core\Block\BlockController;
 use Concrete\Core\Page\Theme\Theme;
 use Loader;
 use FileImporter;
+use BlockType;
 
 defined('C5_EXECUTE') or die(_("Access Denied."));
 
@@ -47,8 +48,24 @@ class Controller extends Package
     {
         $pkg = parent::install();
         Theme::add('sakan', $pkg);
+        BlockType::installBlockTypeFromPackage('image_text', $pkg);
     }
-
+    
+    public function upgrade() {
+        parent::upgrade();
+        $pkg = Package::getByHandle('sakan');
+        $bt = BlockType::getByHandle('image_text');
+        if (!is_object($bt)) {
+            $bt = BlockType::installBlockTypeFromPackage('image_text', $pkg);
+        }
+    }
+    
+    public function uninstall() {
+        parent::uninstall();
+        $db = Loader::db();
+        $db->Execute('DROP TABLE IF EXISTS btImageText');
+    }
+    
     public function on_start()
     {
         $al = \Concrete\Core\Asset\AssetList::getInstance();
