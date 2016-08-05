@@ -48,6 +48,6 @@ $c = Page::getCurrentPage();
     <?php echo $pagination;?>
 <?php endif; ?>
 
-<?php if ( $c->isEditMode() && $controller->isBlockEmpty()): ?>
+<?php if ($c->isEditMode() && $controller->isBlockEmpty()): ?>
     <div class="ccm-edit-mode-disabled-item"><?php echo t('Empty Page List Block.')?></div>
 <?php endif; ?>

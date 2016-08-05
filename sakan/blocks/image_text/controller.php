@@ -1,8 +1,6 @@
 <?php
-
 namespace Concrete\Package\Sakan\Block\ImageText;
 
-use Core;
 use Database;
 use File;
 use Concrete\Core\Block\BlockController;
@@ -50,7 +48,6 @@ class Controller extends BlockController
         $this->set('SpPosition', $this->getChoice($this->SpPosition));
 
         $this->set('content', $this->content);
-
     }
 
     public function getJavaScriptStrings()
@@ -96,9 +93,9 @@ class Controller extends BlockController
 
     public function getChoice($var)
     {
-        $valid_array = array('left','center','right');
+        $valid_array = array('left', 'center', 'right');
         $default_var = 'center';
-        if (in_array($var,$valid_array)) {
+        if (in_array($var, $valid_array)) {
             return $var;
         } else {
             return $default_var;

@@ -21,9 +21,9 @@
 		<div class="navbar-inverse">
 			<div class="container">
 						<?php
-		                  $a = new GlobalArea('Header Site Title');
-		                  $a->display($c);
-		                ?>
+                          $a = new GlobalArea('Header Site Title');
+                          $a->display($c);
+                        ?>
 				
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#masthead" aria-expanded="false" aria-controls="navbar">
@@ -35,13 +35,13 @@
 				</div>
 				<div id="masthead" class="collapse navbar-collapse">
 		                <?php
-		                  $a = new GlobalArea('Header Search');
-		                  $a->display($c);
-		                ?>
-				                <?php
-				                  $a = new GlobalArea('Header Sub Navigation');
-				                  $a->display($c);
-				                ?>
+                          $a = new GlobalArea('Header Search');
+                          $a->display($c);
+                        ?>
+		                <?php
+                          $a = new GlobalArea('Header Sub Navigation');
+                          $a->display($c);
+                        ?>
 				</div><!-- /.nav-collapse -->
 			</div>
 		</div>
