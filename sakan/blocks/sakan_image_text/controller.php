@@ -1,5 +1,5 @@
 <?php
-namespace Concrete\Package\Sakan\Block\ImageText;
+namespace Concrete\Package\Sakan\Block\SakanImageText;
 
 use Database;
 use File;
@@ -9,7 +9,7 @@ class Controller extends BlockController
 {
     protected $btInterfaceWidth = 400;
     protected $btInterfaceHeight = 550;
-    protected $btTable = 'btImageText';
+    protected $btTable = 'btSakanImageText';
     protected $btCacheBlockRecord = true;
     protected $btCacheBlockOutput = true;
     protected $btCacheBlockOutputOnPost = true;
