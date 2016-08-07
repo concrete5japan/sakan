@@ -27,6 +27,11 @@ concrete5.7 で簡単にサイト作成が出来るよう、日本人向けに�
 - Katz Ueno @katzueno
 - Hayaka Shoji @miz563
 - Shinji Sakai @shin2
-- Yuko Oikawa @01kawa
+- Hiroyasu Yamada @hiroyasu55
 - Fumito MIZUNO @ounziw
-- Torajiro @torajiro
+- Student: @kanda025o
+- Yoji  Izumi @YojiIzumi
+- Yuko Oikawa @01kawa
+- Takeshi Ando @andotake3
+- Naoki Soneda @sonedanaoki
+- Mignon Style @mignonstyle

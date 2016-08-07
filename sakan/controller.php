@@ -20,12 +20,12 @@ class Controller extends Package
 
     public function getPackageDescription()
     {
-        return t("Sakan theme is a starter theme and favorble corporalte looking open source theme.");
+        return t("Sakan theme is also help develop concrete5 site easier.");
     }
 
     public function getPackageName()
     {
-        return t("Sakan");
+        return t("sakan");
     }
     
     public function import_files() 
