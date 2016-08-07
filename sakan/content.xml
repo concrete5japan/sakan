@@ -456,7 +456,7 @@
                 <data table="btImageSliderEntries">
                     <record>
                         <cID><![CDATA[0]]></cID>
-                        <fID>{ccm:export:file:top_image_01.png}</fID>
+                        <fID>{ccm:export:file:top_image_01.jpg}</fID>
                         <linkURL><![CDATA[]]></linkURL>
                         <title><![CDATA[Stand Out on the Web]]></title>
                         <description><![CDATA[                                    <p>Share your business with an impressive, yet minimal presentation. Let your customers understand your web presence through elegance and clarity.</p>]]></description>
@@ -464,7 +464,7 @@
                     </record>
                     <record>
                         <cID><![CDATA[0]]></cID>
-                        <fID>{ccm:export:file:top_image_02.png}</fID>
+                        <fID>{ccm:export:file:top_image_02.jpg}</fID>
                         <linkURL><![CDATA[]]></linkURL>
                         <title><![CDATA[A Simple Image Slider]]></title>
                         <description><![CDATA[                                    <p>This image slider can have any content that you want in it.</p>]]></description>
