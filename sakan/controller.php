@@ -43,24 +43,17 @@ class Controller extends Package
     {
         $pkg = parent::install();
         Theme::add('sakan', $pkg);
-        BlockType::installBlockTypeFromPackage('image_text', $pkg);
+        BlockType::installBlockTypeFromPackage('sakan_image_text', $pkg);
     }
 
     public function upgrade()
     {
         parent::upgrade();
         $pkg = Package::getByHandle('sakan');
-        $bt = BlockType::getByHandle('image_text');
+        $bt = BlockType::getByHandle('sakan_image_text');
         if (!is_object($bt)) {
-            $bt = BlockType::installBlockTypeFromPackage('image_text', $pkg);
+            $bt = BlockType::installBlockTypeFromPackage('sakan_image_text', $pkg);
         }
-    }
-
-    public function uninstall()
-    {
-        parent::uninstall();
-        $db = Loader::db();
-        $db->Execute('DROP TABLE IF EXISTS btImageText');
     }
 
     public function on_start()
