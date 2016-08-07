@@ -43,8 +43,8 @@ class Controller extends BlockController
         }
 
         $this->set('f', $f);
-        $this->set('altText', $this->getAltText());
-        $this->set('title', $this->getTitle());
+        $this->set('altText', $this->altText);
+        $this->set('title', $this->title);
 
         $this->set('PcPosition', $this->getChoice($this->PcPosition));
         $this->set('SpPosition', $this->getChoice($this->SpPosition));
@@ -58,40 +58,6 @@ class Controller extends BlockController
         return array(
             'image-required' => t('You must select an image.'),
         );
-    }
-
-    public function getImageFeatureDetailFileObject()
-    {
-        // i don't know why this->fID isn't sticky in some cases, leading us to query
-        // every damn time
-        $db = Database::connection();
-        $fID = $db->fetchColumn('select fID from btImageText where bID = ?', array($this->bID), 0);
-        if ($fID) {
-            $f = File::getByID($fID);
-            if (is_object($f) && !$f->isError()) {
-                return $f;
-            }
-        }
-    }
-
-    public function getFileID()
-    {
-        return $this->fID;
-    }
-
-    public function getFileObject()
-    {
-        return File::getByID($this->fID);
-    }
-
-    public function getAltText()
-    {
-        return $this->altText;
-    }
-
-    public function getTitle()
-    {
-        return isset($this->title) ? $this->title : null;
     }
 
     public function getChoice($var)
