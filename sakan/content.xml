@@ -390,10 +390,10 @@
           </blocks>
         </area>
       </stack>
-	    <stack name="Bread nav" type="global_area">
+	    <stack name="Breadcrumb" type="global_area">
 	      <area name="Main">
 	        <blocks>
-	          <block type="autonav" name="" custom-template="bread_nav" mc-block-id="b9">
+	          <block type="autonav" name="" custom-template="breadcrumb" mc-block-id="b9">
 	            <style>
 	              <backgroundColor/>
 	              <backgroundRepeat>no-repeat</backgroundRepeat>

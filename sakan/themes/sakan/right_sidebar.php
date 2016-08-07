@@ -2,7 +2,7 @@
 defined('C5_EXECUTE') or die("Access Denied.");
 $this->inc('elements/header.php'); ?>
 <?php
-  $a = new GlobalArea('Bread nav');
+  $a = new GlobalArea('Breadcrumb');
   $a->display($c);
 ?>
 <main>

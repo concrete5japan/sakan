@@ -49,14 +49,15 @@ if (is_object($f)) {
     }
 
     echo '<div class="row">';
-    printf($divformat,$imageWrapperClass,$imageTag);
+    printf($divformat, $imageWrapperClass, $imageTag);
 
     $textcontent = nl2br(strip_tags($content));
-    printf($divformat,$textWrapperClass,$textcontent);
+    printf($divformat, $textWrapperClass, $textcontent);
     echo '</div>';
-
-} else if ($c->isEditMode()) { ?>
+} elseif ($c->isEditMode()) {
+    ?>
 
     <div class="ccm-edit-mode-disabled-item"><?php echo t('Image not Selected.')?></div>
 
-<?php } ?>
+<?php 
+} ?>
