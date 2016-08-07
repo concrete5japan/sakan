@@ -11,8 +11,8 @@ $this->inc('elements/header.php'); ?>
    <div class="row">
     <div class="main-contents">
 	<?php
-	print $innerContent;
-	?>
+    echo $innerContent;
+    ?>
     </div><!-- /.WrapperClass -->
    </div><!-- /.row -->
   </div><!-- /.container -->

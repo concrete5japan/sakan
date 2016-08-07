@@ -1,13 +1,12 @@
 <?php
-
 namespace Concrete\Package\Sakan\Theme\Sakan;
 
 use Concrete\Core\Page\Theme\Theme;
 
 class PageTheme extends Theme
 {
-
-    public function registerAssets() {
+    public function registerAssets()
+    {
         $this->providesAsset('javascript', 'bootstrap/*');
         $this->providesAsset('css', 'bootstrap/*');
         $this->providesAsset('css', 'blocks/form');
@@ -28,7 +27,7 @@ class PageTheme extends Theme
         $this->requireAsset('javascript', 'picturefill');
         $this->requireAsset('javascript', 'sakan-bootstrap');
     }
-    
+
     protected $pThemeGridFrameworkHandle = 'bootstrap3';
 
     public function getThemeBlockClasses()
@@ -39,24 +38,24 @@ class PageTheme extends Theme
                 'recent-blog-entry',
                 'blog-entry-list',
                 'page-list-with-buttons',
-                'block-sidebar-wrapped'
+                'block-sidebar-wrapped',
             ),
             'next_previous' => array('block-sidebar-wrapped'),
             'share_this_page' => array('block-sidebar-wrapped'),
             'content' => array(
                 'block-sidebar-wrapped',
-                'block-sidebar-padded'
+                'block-sidebar-padded',
             ),
             'date_navigation' => array('block-sidebar-padded'),
             'topic_list' => array('block-sidebar-wrapped'),
             'testimonial' => array('testimonial-bio'),
             'image' => array(
                 'image-right-tilt',
-                'image-circle'
-            )
+                'image-circle',
+            ),
         );
     }
-    
+
     public function getThemeDefaultBlockTemplates()
     {
         /*
@@ -71,7 +70,7 @@ class PageTheme extends Theme
         return array(
             'large' => '900px',
             'medium' => '768px',
-            'small' => '0'
+            'small' => '0',
         );
     }
 
@@ -84,7 +83,7 @@ class PageTheme extends Theme
             array('title' => t('Image Caption'), 'menuClass' => 'image-caption', 'spanClass' => 'image-caption'),
             array('title' => t('Standard Button'), 'menuClass' => '', 'spanClass' => 'btn btn-default'),
             array('title' => t('Success Button'), 'menuClass' => '', 'spanClass' => 'btn btn-success'),
-            array('title' => t('Primary Button'), 'menuClass' => '', 'spanClass' => 'btn btn-primary')
+            array('title' => t('Primary Button'), 'menuClass' => '', 'spanClass' => 'btn btn-primary'),
         );
     }
 }

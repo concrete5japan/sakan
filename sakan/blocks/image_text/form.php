@@ -1,10 +1,10 @@
-<?php  
+<?php 
 defined('C5_EXECUTE') or die("Access Denied.");
 $al = Core::make('helper/concrete/asset_library');
 $bf = null;
 
-if ($controller->getFileID() > 0) { 
-	$bf = $controller->getFileObject();
+if ($controller->getFileID() > 0) {
+    $bf = $controller->getFileObject();
 }
 ?>
 
@@ -21,12 +21,12 @@ $args = array();
 </div>
     <div class="form-group">
         <?php echo $form->label('altText', t('Alt. Text'))?>
-        <?php echo $form->text('altText', $altText, array('style'=>'width: 60%;')); ?>
+        <?php echo $form->text('altText', $altText, array('style' => 'width: 60%;')); ?>
     </div>
 
     <div class="form-group">
         <?php echo $form->label('title', t('Title'))?>
-        <?php echo $form->text('title', $title, array('style'=>'width: 60%;')); ?>
+        <?php echo $form->text('title', $title, array('style' => 'width: 60%;')); ?>
     </div>
 </fieldset>
 
@@ -36,7 +36,7 @@ $args = array();
 
 <div class="form-group">
 	<?php echo $form->label('content', t('Text'))?>
-	<?php echo $form->textarea('content', $content, array('cols'=>'60', 'rows'=>'5')); ?>
+	<?php echo $form->textarea('content', $content, array('cols' => '60', 'rows' => '5')); ?>
 </div>
 
 
