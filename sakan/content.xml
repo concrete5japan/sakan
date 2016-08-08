@@ -833,6 +833,102 @@
           </blocks>
       </area>
     </page>
+    <page name="Hello World2" path="/news/news2" public-date="2015-02-14 15:30:00" filename="" pagetype="news" template="right_sidebar" user="admin" description="ここにHello Worldの説明がはいります" package="">
+      <area name="Main">
+        <blocks>
+          <block type="content" name="">
+            <data table="btContentLocal">
+              <record>
+                <content><![CDATA[<h1 class="page-title">Hello World</h1><p>ここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいります</p><h2>見出し2</h2><h3>見出し3</h3><p>段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落</p><div>div要素div要素div要素div要素div要素div要素div要素div要素</div><table><tr><th>項目名</th><td>内容がはいります</td></tr><tr><th>項目名</th><td>内容がはいります</td></tr></table>]]></content>
+              </record>
+            </data>
+          </block>
+        </blocks>
+      </area>
+      <area name="Sidebar">
+          <blocks>
+              <block type="date_navigation" name="">
+                  <style>
+                      <customClass>block-sidebar-padded</customClass>
+                  </style>
+                  <data table="btDateNavigation">
+                      <record>
+                          <title><![CDATA[Archives]]></title>
+                          <redirectToResults>0</redirectToResults>
+                          <filterByParent>1</filterByParent>
+                          <cParentID>{ccm:export:page:/news}</cParentID>
+                          <cTargetID/>
+                          <ptID>{ccm:export:pagetype:news}</ptID>
+                      </record>
+                  </data>
+              </block>
+          </blocks>
+      </area>
+    </page>
+    <page name="Hello World3" path="/news/news3" public-date="2015-02-14 15:30:00" filename="" pagetype="news" template="right_sidebar" user="admin" description="ここにHello Worldの説明がはいります" package="">
+      <area name="Main">
+        <blocks>
+          <block type="content" name="">
+            <data table="btContentLocal">
+              <record>
+                <content><![CDATA[<h1 class="page-title">Hello World</h1><p>ここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいります</p><h2>見出し2</h2><h3>見出し3</h3><p>段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落</p><div>div要素div要素div要素div要素div要素div要素div要素div要素</div><table><tr><th>項目名</th><td>内容がはいります</td></tr><tr><th>項目名</th><td>内容がはいります</td></tr></table>]]></content>
+              </record>
+            </data>
+          </block>
+        </blocks>
+      </area>
+      <area name="Sidebar">
+          <blocks>
+              <block type="date_navigation" name="">
+                  <style>
+                      <customClass>block-sidebar-padded</customClass>
+                  </style>
+                  <data table="btDateNavigation">
+                      <record>
+                          <title><![CDATA[Archives]]></title>
+                          <redirectToResults>0</redirectToResults>
+                          <filterByParent>1</filterByParent>
+                          <cParentID>{ccm:export:page:/news}</cParentID>
+                          <cTargetID/>
+                          <ptID>{ccm:export:pagetype:news}</ptID>
+                      </record>
+                  </data>
+              </block>
+          </blocks>
+      </area>
+    </page>
+    <page name="Hello World3" path="/news/news3" public-date="2015-02-14 15:30:00" filename="" pagetype="news" template="right_sidebar" user="admin" description="ここにHello Worldの説明がはいります" package="">
+      <area name="Main">
+        <blocks>
+          <block type="content" name="">
+            <data table="btContentLocal">
+              <record>
+                <content><![CDATA[<h1 class="page-title">Hello World</h1><p>ここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいります</p><h2>見出し2</h2><h3>見出し3</h3><p>段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落</p><div>div要素div要素div要素div要素div要素div要素div要素div要素</div><table><tr><th>項目名</th><td>内容がはいります</td></tr><tr><th>項目名</th><td>内容がはいります</td></tr></table>]]></content>
+              </record>
+            </data>
+          </block>
+        </blocks>
+      </area>
+      <area name="Sidebar">
+          <blocks>
+              <block type="date_navigation" name="">
+                  <style>
+                      <customClass>block-sidebar-padded</customClass>
+                  </style>
+                  <data table="btDateNavigation">
+                      <record>
+                          <title><![CDATA[Archives]]></title>
+                          <redirectToResults>0</redirectToResults>
+                          <filterByParent>1</filterByParent>
+                          <cParentID>{ccm:export:page:/news}</cParentID>
+                          <cTargetID/>
+                          <ptID>{ccm:export:pagetype:news}</ptID>
+                      </record>
+                  </data>
+              </block>
+          </blocks>
+      </area>
+    </page>
     <page name="Blog" path="/blog" filename="" pagetype="page" template="right_sidebar" user="admin" description="" package="">
       <area name="Main">
       	<blocks>
