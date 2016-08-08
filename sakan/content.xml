@@ -1,5 +1,13 @@
 <?xml version="1.0"?>
 <concrete5-cif version="1.0">
+    <attributekeys>
+        <attributekey handle="blog_topics" name="sakanブログ" package="sakan" searchable="1" indexed="1" type="topics" category="collection">
+            <tree name="Blog Entries" path="/"/>
+        </attributekey>
+        <attributekey handle="news_topics" name="sakanニュース" package="sakan" searchable="1" indexed="1" type="topics" category="collection">
+            <tree name="Projects" path="/"/>
+        </attributekey>
+    </attributekeys>
     <themes>
         <theme handle="sakan" package="" activated="1"/>
     </themes>
