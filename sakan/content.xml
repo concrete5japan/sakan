@@ -8,6 +8,12 @@
             <tree name="Projects" path="/"/>
         </attributekey>
     </attributekeys>
+    <attributesets>
+        <attributeset handle="sakan" name="sakan" package="sakan" locked="0" category="collection">
+            <attributekey handle="blog_topics"/>
+            <attributekey handle="news_topics"/>
+        </attributeset>
+    </attributesets>
     <themes>
         <theme handle="sakan" package="" activated="1"/>
     </themes>
