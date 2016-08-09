@@ -1,16 +1,12 @@
 <?xml version="1.0"?>
 <concrete5-cif version="1.0">
     <attributekeys>
-        <attributekey handle="blog_topics" name="sakanブログ" package="sakan" searchable="1" indexed="1" type="topics" category="collection">
-            <tree name="Blog Entries" path="/"/>
-        </attributekey>
-        <attributekey handle="news_topics" name="sakanニュース" package="sakan" searchable="1" indexed="1" type="topics" category="collection">
-            <tree name="Projects" path="/"/>
+        <attributekey handle="news_topics" name="ニュース" package="sakan" searchable="1" indexed="1" type="topics" category="collection">
+            <tree name="News" path="/"/>
         </attributekey>
     </attributekeys>
     <attributesets>
         <attributeset handle="sakan" name="sakan" package="sakan" locked="0" category="collection">
-            <attributekey handle="blog_topics"/>
             <attributekey handle="news_topics"/>
         </attributeset>
     </attributesets>
@@ -798,10 +794,27 @@
                     </record>
                 </data>
             </block>
+            <block type="topic_list" name="">
+              <data>
+                  <mode>S</mode>
+                  <tree>News</tree>
+                  <title>Topics</title>
+                  <cParentID />
+              </data>
+            </block>
         </blocks>
     </area>
     </page>
     <page name="Hello World" path="/news/news1" public-date="2015-02-14 15:30:00" filename="" pagetype="news" template="right_sidebar" user="admin" description="ここにHello Worldの説明がはいります" package="">
+      <attributes>
+        <attributekey handle="news_topics">
+          <topics>
+            <topic>/新商品</topic>
+            <topic>/お得情報</topic>
+            <topic>/臨時休業のお知らせ</topic>
+          </topics>
+        </attributekey>
+      </attributes>
       <area name="Main">
         <blocks>
           <block type="content" name="">
@@ -834,6 +847,13 @@
       </area>
     </page>
     <page name="Hello World2" path="/news/news2" public-date="2015-02-14 15:30:00" filename="" pagetype="news" template="right_sidebar" user="admin" description="ここにHello Worldの説明がはいります" package="">
+      <attributes>
+        <attributekey handle="news_topics">
+          <topics>
+            <topic>/新商品</topic>
+          </topics>
+        </attributekey>
+      </attributes>
       <area name="Main">
         <blocks>
           <block type="content" name="">
@@ -866,6 +886,13 @@
       </area>
     </page>
     <page name="Hello World3" path="/news/news3" public-date="2015-02-14 15:30:00" filename="" pagetype="news" template="right_sidebar" user="admin" description="ここにHello Worldの説明がはいります" package="">
+      <attributes>
+        <attributekey handle="news_topics">
+          <topics>
+            <topic>/お得情報</topic>
+          </topics>
+        </attributekey>
+      </attributes>
       <area name="Main">
         <blocks>
           <block type="content" name="">
@@ -898,6 +925,53 @@
       </area>
     </page>
     <page name="Hello World3" path="/news/news3" public-date="2015-02-14 15:30:00" filename="" pagetype="news" template="right_sidebar" user="admin" description="ここにHello Worldの説明がはいります" package="">
+      <attributes>
+        <attributekey handle="news_topics">
+          <topics>
+            <topic>/臨時休業のお知らせ</topic>
+          </topics>
+        </attributekey>
+      </attributes>
+      <area name="Main">
+        <blocks>
+          <block type="content" name="">
+            <data table="btContentLocal">
+              <record>
+                <content><![CDATA[<h1 class="page-title">Hello World</h1><p>ここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいります</p><h2>見出し2</h2><h3>見出し3</h3><p>段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落</p><div>div要素div要素div要素div要素div要素div要素div要素div要素</div><table><tr><th>項目名</th><td>内容がはいります</td></tr><tr><th>項目名</th><td>内容がはいります</td></tr></table>]]></content>
+              </record>
+            </data>
+          </block>
+        </blocks>
+      </area>
+      <area name="Sidebar">
+          <blocks>
+              <block type="date_navigation" name="">
+                  <style>
+                      <customClass>block-sidebar-padded</customClass>
+                  </style>
+                  <data table="btDateNavigation">
+                      <record>
+                          <title><![CDATA[Archives]]></title>
+                          <redirectToResults>0</redirectToResults>
+                          <filterByParent>1</filterByParent>
+                          <cParentID>{ccm:export:page:/news}</cParentID>
+                          <cTargetID/>
+                          <ptID>{ccm:export:pagetype:news}</ptID>
+                      </record>
+                  </data>
+              </block>
+          </blocks>
+      </area>
+    </page>
+    <page name="Hello World4" path="/news/news4" public-date="2015-02-14 15:30:00" filename="" pagetype="news" template="right_sidebar" user="admin" description="ここにHello Worldの説明がはいります" package="">
+      <attributes>
+        <attributekey handle="news_topics">
+          <topics>
+            <topic>/新商品</topic>
+            <topic>/臨時休業のお知らせ</topic>
+          </topics>
+        </attributekey>
+      </attributes>
       <area name="Main">
         <blocks>
           <block type="content" name="">
@@ -1058,4 +1132,11 @@
         <link service="github" url="http://github.com/concrete5"/>
         <link service="twitter" url="http://twitter.com/concrete5"/>
     </sociallinks>
+    <trees>
+    <tree type="topic" name="News">
+        <topic name="新商品"/>
+        <topic name="お得情報"/>
+        <topic name="臨時休業のお知らせ"/>
+    </tree>
+    </trees>
 </concrete5-cif>
