@@ -760,7 +760,7 @@
               </record>
             </data>
           </block>
-	        <block type="page_list" name="" mc-block-id="b">
+	        <block type="page_list" name="" custom-template="default_list" mc-block-id="b">
 	            <data table="btPageList">
 	                <record>
 	                    <num><![CDATA[3]]></num>
