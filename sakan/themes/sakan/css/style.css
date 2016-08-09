@@ -8775,6 +8775,7 @@ a:hover img {
   background-color: #0288d1;
   border-radius: 3px;
   margin: 3px 0;
+  margin-right: 3px;
   padding: 1px 5px;
   display: inline-block;
 }
