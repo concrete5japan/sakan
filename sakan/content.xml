@@ -770,6 +770,7 @@
 	                    <cThis><![CDATA[1]]></cThis>
 	                    <includeName><![CDATA[1]]></includeName>
 	                    <includeDescription><![CDATA[0]]></includeDescription>
+                      <enableExternalFiltering><![CDATA[1]]></enableExternalFiltering>
 	                    <ptID>{ccm:export:pagetype:news}</ptID>
 	                    <pageListTitle>Related Posts</pageListTitle>
 	                </record>
