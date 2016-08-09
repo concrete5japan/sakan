@@ -2,6 +2,7 @@
 defined('C5_EXECUTE') or die("Access Denied.");
 $th = Loader::helper('text');
 $c = Page::getCurrentPage();
+$dh = Core::make('helper/date');
 ?>
 
 <div class="ccm-block-page-list-thumbnail-grid-wrapper">
@@ -17,7 +18,7 @@ $c = Page::getCurrentPage();
     <?php foreach ($pages as $page):
         $title = $th->entities($page->getCollectionName());
         $url = $nh->getLinkToCollection($page);
-        $date = $c->getCollectionDateAdded('F j, Y');
+        $date = $dh->formatDateTime($page->getCollectionDatePublic(), true);
         $target = ($page->getCollectionPointerExternalLink() != '' && $page->openCollectionPointerExternalLinkInNewWindow()) ? '_blank' : $page->getAttribute('nav_target');
         $target = empty($target) ? '_self' : $target;
         $thumbnail = $page->getAttribute('thumbnail');
