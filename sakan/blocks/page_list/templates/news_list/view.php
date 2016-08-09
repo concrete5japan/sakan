@@ -21,7 +21,7 @@ $c = Page::getCurrentPage();
         $target = ($page->getCollectionPointerExternalLink() != '' && $page->openCollectionPointerExternalLinkInNewWindow()) ? '_blank' : $page->getAttribute('nav_target');
         $target = empty($target) ? '_self' : $target;
         $thumbnail = $page->getAttribute('thumbnail');
-        $topics = $page->getAttribute('project_topics');
+        $topics = $page->getAttribute('news_topics');
         $hoverLinkText = $title;
         $description = $page->getCollectionDescription();
         $description = $controller->truncateSummaries ? $th->wordSafeShortText($description, $controller->truncateChars) : $description;
@@ -48,9 +48,6 @@ $c = Page::getCurrentPage();
         <dd class="entry-title">
           <a href="<?php echo $url ?>" target="<?php echo $target ?>"><?php echo $title; ?></a>
           <p><?php echo $description; ?></p>
-          <p><?php //var_dump($project_topics);?></p>
-
-
         </dd>
 
 
