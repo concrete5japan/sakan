@@ -62,6 +62,7 @@
             <control custom-template="" custom-label="" type="core_page_property" handle="url_slug"/>
             <control custom-template="" custom-label="" type="core_page_property" handle="page_template"/>
             <control custom-template="" custom-label="" type="core_page_property" handle="publish_target"/>
+            <control custom-template="" custom-label="" type="collection_attribute" handle="news_topics"/>
           </set>
           <set name="Content">
             <control custom-template="" custom-label="Body" output-control-id="newscontent" type="block" handle="content"/>
