@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <concrete5-cif version="1.0">
     <attributekeys>
-        <attributekey handle="news_topics" name="news" package="sakan" searchable="1" indexed="1" type="topics" category="collection">
+        <attributekey handle="news_topics" name="ニュース" package="sakan" searchable="1" indexed="1" type="topics" category="collection">
             <tree name="News" path="/"/>
         </attributekey>
     </attributekeys>
@@ -74,7 +74,7 @@
             <page>
               <area name="Main">
                 <blocks>
-                  <block type="page_title" name="" custom-template="">
+                  <block type="page_title" name="" custom-template="" mc-block-id="">
                       <data table="btPageTitle">
                           <record>
                               <useCustomTitle><![CDATA[0]]></useCustomTitle>
@@ -85,7 +85,7 @@
                   <block type="core_page_type_composer_control_output" name="">
                       <control output-control-id="newscontent"/>
                   </block>
-                  <block type="next_previous" name="">
+                  <block type="next_previous" name="" mc-block-id="">
                       <style>
                           <backgroundColor/>
                           <backgroundRepeat/>
@@ -128,7 +128,7 @@
               </area>
               <area name="Sidebar">
                   <blocks>
-                      <block type="date_navigation" name="">
+                      <block type="date_navigation" name=""  mc-block-id="b10">
                           <style>
                               <customClass>block-sidebar-padded</customClass>
                           </style>
@@ -171,7 +171,7 @@
             <page>
               <area name="Main">
                 <blocks>
-                  <block type="page_title" name="" custom-template="">
+                  <block type="page_title" name="" custom-template="" mc-block-id="">
                       <data table="btPageTitle">
                           <record>
                               <useCustomTitle><![CDATA[0]]></useCustomTitle>
@@ -182,7 +182,7 @@
                   <block type="core_page_type_composer_control_output" name="">
                       <control output-control-id="blogcontent"/>
                   </block>
-                  <block type="next_previous" name="">
+                  <block type="next_previous" name="" mc-block-id="">
                       <style>
                           <backgroundColor/>
                           <backgroundRepeat/>
@@ -225,7 +225,7 @@
               </area>
               <area name="Sidebar">
                   <blocks>
-                      <block type="date_navigation" name="">
+                      <block type="date_navigation" name="" mc-block-id="b11">
                           <style>
                               <customClass>block-sidebar-padded</customClass>
                           </style>
@@ -248,210 +248,210 @@
       </composer>
       </pagetype>
     </pagetypes>
-    <stacks>
-    <stack name="Header Site Title" type="global_area">
-      <area name="Main">
-        <blocks>
-          <block type="content" name="">
-            <data table="btContentLocal">
-              <record>
-                <content><![CDATA[<a class="navbar-brand" href="{ccm:export:page:}"><concrete-picture alt="" file="logo.png" class="img-responsive" /></a>]]></content>
-              </record>
-            </data>
-          </block>
-        </blocks>
-      </area>
-    </stack>
-    <stack name="Header Sub Navigation" type="global_area">
-      <area name="Main">
-        <blocks>
-          <block type="content" name="">
-            <data table="btContentLocal">
-              <record>
-                <content><![CDATA[<section class="top-bar-section"><ul class="nav navbar-nav navbar-right"><li><a href="{ccm:export:page:/about/access}" class="fa fa-caret-right">Access</a></li><li><a href="{ccm:export:page:/contact}" class="fa fa-caret-right">Contact</a></li><li><a href="{ccm:export:page:}" class="fa fa-caret-right">Home</a></li></ul></section>]]></content>
-              </record>
-            </data>
-          </block>
-        </blocks>
-      </area>
-    </stack>
-    <stack name="Header Search" type="global_area">
-      <area name="Main">
-        <blocks>
-          <block type="search" name="">
-                <style>
-                  <backgroundColor/>
-                  <backgroundRepeat/>
-                  <borderWidth/>
-                  <borderColor/>
-                  <borderStyle/>
-                  <borderRadius/>
-                  <baseFontSize/>
-                  <alignment/>
-                  <textColor/>
-                  <linkColor/>
-                  <paddingTop/>
-                  <paddingBottom/>
-                  <paddingLeft/>
-                  <paddingRight/>
-                  <marginTop/>
-                  <marginBottom/>
-                  <marginLeft/>
-                  <marginRight/>
-                  <rotate/>
-                  <boxShadowHorizontal/>
-                  <boxShadowVertical/>
-                  <boxShadowBlur/>
-                  <boxShadowSpread/>
-                  <boxShadowColor/>
-                  <customClass>navbar-form navbar-right</customClass>
-                </style>
-            <data table="btSearch">
-              <record>
-                <title><![CDATA[]]></title>
-                <buttonText><![CDATA[Search]]></buttonText>
-                <baseSearchPath><![CDATA[]]></baseSearchPath>
-                <postTo_cID>{ccm:export:page:/search}</postTo_cID>
-                <resultsURL><![CDATA[]]></resultsURL>
-               </record>
-            </data>
-          </block>
-        </blocks>
-      </area>
-    </stack>
-    <stack name="Header Navigation" type="global_area">
-      <area name="Main">
-        <blocks>
-        <block type="autonav" name="" custom-template="global_nav">
-            <data table="btNavigation">
-                <record>
-                    <orderBy><![CDATA[display_asc]]></orderBy>
-                    <displayPages><![CDATA[top]]></displayPages>
-                    <displayPagesCID/>
-                    <displayPagesIncludeSelf><![CDATA[0]]></displayPagesIncludeSelf>
-                    <displaySubPages><![CDATA[0]]></displaySubPages>
-                    <displaySubPageLevels><![CDATA[custom]]></displaySubPageLevels>
-                    <displaySubPageLevelsNum><![CDATA[1]]></displaySubPageLevelsNum>
-                    <displayUnavailablePages><![CDATA[0]]></displayUnavailablePages>
-                </record>
-            </data>
-        </block>
-        </blocks>
-      </area>
-    </stack>
-    <stack name="Footer Site Title" type="global_area">
+	  <stacks>
+	    <stack name="Header Site Title" type="global_area">
+	      <area name="Main">
+	        <blocks>
+	          <block type="content" name="" mc-block-id="b1">
+	            <data table="btContentLocal">
+	              <record>
+	                <content><![CDATA[<a class="navbar-brand" href="{ccm:export:page:}"><concrete-picture alt="" file="logo.png" class="img-responsive" /></a>]]></content>
+	              </record>
+	            </data>
+	          </block>
+	        </blocks>
+	      </area>
+	    </stack>
+	    <stack name="Header Sub Navigation" type="global_area">
+	      <area name="Main">
+	        <blocks>
+	          <block type="content" name="" mc-block-id="b2">
+	            <data table="btContentLocal">
+	              <record>
+	                <content><![CDATA[<section class="top-bar-section"><ul class="nav navbar-nav navbar-right"><li><a href="{ccm:export:page:/about/access}" class="fa fa-caret-right">アクセス</a></li><li><a href="{ccm:export:page:/contact}" class="fa fa-caret-right">お問い合わせ</a></li><li><a href="{ccm:export:page:}" class="fa fa-caret-right">ホーム</a></li></ul></section>]]></content>
+	              </record>
+	            </data>
+	          </block>
+	        </blocks>
+	      </area>
+	    </stack>
+	    <stack name="Header Search" type="global_area">
+	      <area name="Main">
+	        <blocks>
+	          <block type="search" name="" mc-block-id="b3">
+                    <style>
+                      <backgroundColor/>
+                      <backgroundRepeat/>
+                      <borderWidth/>
+                      <borderColor/>
+                      <borderStyle/>
+                      <borderRadius/>
+                      <baseFontSize/>
+                      <alignment/>
+                      <textColor/>
+                      <linkColor/>
+                      <paddingTop/>
+                      <paddingBottom/>
+                      <paddingLeft/>
+                      <paddingRight/>
+                      <marginTop/>
+                      <marginBottom/>
+                      <marginLeft/>
+                      <marginRight/>
+                      <rotate/>
+                      <boxShadowHorizontal/>
+                      <boxShadowVertical/>
+                      <boxShadowBlur/>
+                      <boxShadowSpread/>
+                      <boxShadowColor/>
+                      <customClass>navbar-form navbar-right</customClass>
+                    </style>
+	            <data table="btSearch">
+	              <record>
+	                <title><![CDATA[]]></title>
+	                <buttonText><![CDATA[検索]]></buttonText>
+	                <baseSearchPath><![CDATA[]]></baseSearchPath>
+	                <postTo_cID>{ccm:export:page:/search}</postTo_cID>
+	                <resultsURL><![CDATA[]]></resultsURL>
+	               </record>
+	            </data>
+	          </block>
+	        </blocks>
+	      </area>
+	    </stack>
+	    <stack name="Header Navigation" type="global_area">
+	      <area name="Main">
+	        <blocks>
+            <block type="autonav" name="" custom-template="global_nav" mc-block-id="b4">
+                <data table="btNavigation">
+                    <record>
+                        <orderBy><![CDATA[display_asc]]></orderBy>
+                        <displayPages><![CDATA[top]]></displayPages>
+                        <displayPagesCID/>
+                        <displayPagesIncludeSelf><![CDATA[0]]></displayPagesIncludeSelf>
+                        <displaySubPages><![CDATA[0]]></displaySubPages>
+                        <displaySubPageLevels><![CDATA[custom]]></displaySubPageLevels>
+                        <displaySubPageLevelsNum><![CDATA[1]]></displaySubPageLevelsNum>
+                        <displayUnavailablePages><![CDATA[0]]></displayUnavailablePages>
+                    </record>
+                </data>
+            </block>
+	        </blocks>
+	      </area>
+	    </stack>
+        <stack name="Footer Site Title" type="global_area">
+            <area name="Main">
+                <blocks>
+                    <block type="content" name="" mc-block-id="b5">
+                        <data table="btContentLocal">
+                            <record>
+                                <content><![CDATA[<h1 class="foot-heading">Sakan</h1>]]></content>
+                            </record>
+                        </data>
+                    </block>
+                </blocks>
+            </area>
+        </stack>
+	    <stack name="Footer Navigation" type="global_area">
+	      <area name="Main">
+	        <blocks>
+	          <block type="content" name="" mc-block-id="b6">
+	            <data table="btContentLocal">
+	              <record>
+	                <content><![CDATA[<ul class="foot-navi list-inline"><li><a href="{ccm:export:page:/about/access}" class="fa fa-caret-right">アクセス</a></li><li><a href="{ccm:export:page:/contact}" class="fa fa-caret-right">お問い合わせ</a></li><li><a href="{ccm:export:page:}" class="fa fa-caret-right">ホーム</a></li></ul>]]></content>
+	              </record>
+	            </data>
+	          </block>
+	        </blocks>
+	      </area>
+	    </stack>
+	    <stack name="Footer Legal" type="global_area">
+	      <area name="Main">
+	        <blocks>
+	          <block type="content" name="" mc-block-id="b7">
+	            <data table="btContentLocal">
+	              <record>
+	                <content><![CDATA[<p>copyright sakan All Rights Reserved.</p>]]></content>
+	              </record>
+	            </data>
+	          </block>
+	        </blocks>
+	      </area>
+	    </stack>
+	    <stack name="Footer Contact" type="global_area">
+	      <area name="Main">
+	        <blocks>
+	          <block type="content" name="" mc-block-id="b8">
+	            <data table="btContentLocal">
+	              <record>
+	                <content><![CDATA[<p>Sakan<br>TEL 000-0000-0000<br>FAX 000-000-0000</p>]]></content>
+	              </record>
+	            </data>
+	          </block>
+	        </blocks>
+	      </area>
+	    </stack>
+      <stack name="Footer Social" type="global_area">
         <area name="Main">
-            <blocks>
-                <block type="content" name="">
-                    <data table="btContentLocal">
-                        <record>
-                            <content><![CDATA[<h1 class="foot-heading">Sakan</h1>]]></content>
-                        </record>
-                    </data>
-                </block>
-            </blocks>
+          <blocks>
+            <block type="social_links" name="" mc-block-id="b9">
+                <link service="twitter"/>
+                <link service="github"/>
+                <link service="facebook"/>
+            </block>
+          </blocks>
         </area>
-    </stack>
-    <stack name="Footer Navigation" type="global_area">
-      <area name="Main">
-        <blocks>
-          <block type="content" name="">
-            <data table="btContentLocal">
-              <record>
-                <content><![CDATA[<ul class="foot-navi list-inline"><li><a href="{ccm:export:page:/about/access}" class="fa fa-caret-right">Access</a></li><li><a href="{ccm:export:page:/contact}" class="fa fa-caret-right">Contact</a></li><li><a href="{ccm:export:page:}" class="fa fa-caret-right">Home</a></li></ul>]]></content>
-              </record>
-            </data>
-          </block>
-        </blocks>
-      </area>
-    </stack>
-    <stack name="Footer Legal" type="global_area">
-      <area name="Main">
-        <blocks>
-          <block type="content" name="">
-            <data table="btContentLocal">
-              <record>
-                <content><![CDATA[<p>Copyright (c) concrete5 Japan Users Group. All Rights Reserved.</p>]]></content>
-              </record>
-            </data>
-          </block>
-        </blocks>
-      </area>
-    </stack>
-    <stack name="Footer Contact" type="global_area">
-      <area name="Main">
-        <blocks>
-          <block type="content" name="">
-            <data table="btContentLocal">
-              <record>
-                <content><![CDATA[<p>Sakan<br>TEL 000-0000-0000<br>FAX 000-000-0000</p>]]></content>
-              </record>
-            </data>
-          </block>
-        </blocks>
-      </area>
-    </stack>
-    <stack name="Footer Social" type="global_area">
-    <area name="Main">
-      <blocks>
-        <block type="social_links" name="">
-            <link service="twitter"/>
-            <link service="github"/>
-            <link service="facebook"/>
-        </block>
-      </blocks>
-    </area>
-    </stack>
-    <stack name="Breadcrumb" type="global_area">
-      <area name="Main">
-        <blocks>
-          <block type="autonav" name="" custom-template="breadcrumb">
-            <style>
-              <backgroundColor/>
-              <backgroundRepeat>no-repeat</backgroundRepeat>
-              <borderWidth/>
-              <borderColor/>
-              <borderStyle>none</borderStyle>
-              <borderRadius/>
-              <baseFontSize/>
-              <alignment/>
-              <textColor/>
-              <linkColor/>
-              <paddingTop/>
-              <paddingBottom/>
-              <paddingLeft/>
-              <paddingRight/>
-              <marginTop/>
-              <marginBottom/>
-              <marginLeft/>
-              <marginRight/>
-              <rotate/>
-              <boxShadowHorizontal/>
-              <boxShadowVertical/>
-              <boxShadowBlur/>
-              <boxShadowSpread/>
-              <boxShadowColor/>
-              <customClass/>
-            </style>
-            <data table="btNavigation">
-              <record>
-                <orderBy><![CDATA[display_asc]]></orderBy>
-                <displayPages><![CDATA[top]]></displayPages>
-                <displayPagesCID/>
-                <displayPagesIncludeSelf><![CDATA[0]]></displayPagesIncludeSelf>
-                <displaySubPages><![CDATA[relevant_breadcrumb]]></displaySubPages>
-                <displaySubPageLevels><![CDATA[0]]></displaySubPageLevels>
-                <displaySubPageLevelsNum><![CDATA[0]]></displaySubPageLevelsNum>
-                <displayUnavailablePages><![CDATA[0]]></displayUnavailablePages>
-              </record>
-            </data>
-          </block>
-        </blocks>
-      </area>
-    </stack>
-    </stacks>
+      </stack>
+	    <stack name="Breadcrumb" type="global_area">
+	      <area name="Main">
+	        <blocks>
+	          <block type="autonav" name="" custom-template="breadcrumb" mc-block-id="b9">
+	            <style>
+	              <backgroundColor/>
+	              <backgroundRepeat>no-repeat</backgroundRepeat>
+	              <borderWidth/>
+	              <borderColor/>
+	              <borderStyle>none</borderStyle>
+	              <borderRadius/>
+	              <baseFontSize/>
+	              <alignment/>
+	              <textColor/>
+	              <linkColor/>
+	              <paddingTop/>
+	              <paddingBottom/>
+	              <paddingLeft/>
+	              <paddingRight/>
+	              <marginTop/>
+	              <marginBottom/>
+	              <marginLeft/>
+	              <marginRight/>
+	              <rotate/>
+	              <boxShadowHorizontal/>
+	              <boxShadowVertical/>
+	              <boxShadowBlur/>
+	              <boxShadowSpread/>
+	              <boxShadowColor/>
+	              <customClass/>
+	            </style>
+	            <data table="btNavigation">
+	              <record>
+	                <orderBy><![CDATA[display_asc]]></orderBy>
+	                <displayPages><![CDATA[top]]></displayPages>
+	                <displayPagesCID/>
+	                <displayPagesIncludeSelf><![CDATA[0]]></displayPagesIncludeSelf>
+	                <displaySubPages><![CDATA[relevant_breadcrumb]]></displaySubPages>
+	                <displaySubPageLevels><![CDATA[0]]></displaySubPageLevels>
+	                <displaySubPageLevelsNum><![CDATA[0]]></displaySubPageLevelsNum>
+	                <displayUnavailablePages><![CDATA[0]]></displayUnavailablePages>
+	              </record>
+	            </data>
+	          </block>
+	        </blocks>
+	      </area>
+	    </stack>
+	  </stacks>
     <pages>
-    <page name="Home" path="" filename="" pagetype="page" template="home" user="admin" description="" package="">
+    <page name="ホーム" path="" filename="" pagetype="page" template="home" user="admin" description="" package="">
       <attributes>
         <attributekey handle="exclude_nav">
           <value><![CDATA[0]]></value>
@@ -471,7 +471,7 @@
                         <fID>{ccm:export:file:top_image_01.jpg}</fID>
                         <linkURL><![CDATA[]]></linkURL>
                         <title><![CDATA[Stand Out on the Web]]></title>
-                        <description><![CDATA[ <p>Share your business with an impressive, yet minimal presentation. Let your customers understand your web presence through elegance and clarity.</p>]]></description>
+                        <description><![CDATA[                                    <p>Share your business with an impressive, yet minimal presentation. Let your customers understand your web presence through elegance and clarity.</p>]]></description>
                         <sortOrder><![CDATA[0]]></sortOrder>
                     </record>
                     <record>
@@ -519,8 +519,8 @@
                       <data table="btFeature">
                         <record>
                           <icon><![CDATA[check]]></icon>
-                          <title><![CDATA[Peace of mind because the sample is lucky]]></title>
-                          <paragraph><![CDATA[You can edit only the already where you want to edit the contents is entered at the point ]]></paragraph>
+                          <title><![CDATA[サンプルがついてるから安心]]></title>
+                          <paragraph><![CDATA[すでに内容がはいっているので編集したいところだけをポイントで編集できます ]]></paragraph>
                         </record>
                       </data>
                   </block>
@@ -557,8 +557,8 @@
                   <data table="btFeature">
                     <record>
                       <icon><![CDATA[check]]></icon>
-                      <title><![CDATA[Support will also be available on the preset]]></title>
-                      <paragraph><![CDATA[It does not require advanced technology to create a home page, you can add or delete a simple change and the contents of the design in the management screen.]]></paragraph>
+                      <title><![CDATA[プリセットにも対応（予定）]]></title>
+                      <paragraph><![CDATA[ホームページを作る技術に詳しくなくても、管理画面内でデザインのカンタン変更や内容の追加・削除が行えます。]]></paragraph>
                     </record>
                   </data>
                   </block>
@@ -595,8 +595,8 @@
                   <data table="btFeature">
                     <record>
                       <icon><![CDATA[check]]></icon>
-                        <title><![CDATA[It will correspond to the responsive]]></title>
-                        <paragraph><![CDATA[Since the basic design are using the twitter bootstrap, Responsive design is also available.]]></paragraph>
+                        <title><![CDATA[レスポンシブに対応（予定）]]></title>
+                        <paragraph><![CDATA[基本のデザインにはtwitter bootstrapを使用しているので、レスポンシブデザインも可能です。]]></paragraph>
                       </record>
                   </data>
                   </block>
@@ -607,63 +607,63 @@
         </blocks>
       </area>
     </page>
-    <page name="About" path="/about" filename="" pagetype="page" template="full" user="admin" description="" package="">
+    <page name="会社概要" path="/about" filename="" pagetype="page" template="full" user="admin" description="" package="">
       <area name="Main">
         <blocks>
           <block type="content" name="">
             <data table="btContentLocal">
               <record>
-                <content><![CDATA[<h1 class="page-title">About</h1><p>We introduce including an overview of the company and shops.</p><h3>You entered is heading</h3><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.</p>]]></content>
+                <content><![CDATA[<h1 class="page-title">会社概要</h1><p>会社やお店の概要などをご紹介します。</p><h3>見出しがはいります</h3><p>ここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいります</p>]]></content>
               </record>
             </data>
           </block>
           <block type="faq" name="" custom-template="corporate_table">
-            <data table="btFaq">
-                <record>
-                    <blockTitle />
-                </record>
-            </data>
-            <data table="btFaqEntries">
-                <record>
-                    <id><![CDATA[5]]></id>
-                    <linkTitle><![CDATA[Company Name]]></linkTitle>
-                    <title><![CDATA[concrete5 Japan Users Group]]></title>
-                    <sortOrder><![CDATA[0]]></sortOrder>
-                    <description />
-                </record>
-                <record>
-                    <id><![CDATA[6]]></id>
-                    <linkTitle><![CDATA[Address]]></linkTitle>
-                    <title><![CDATA[Basecamp Nagoya at Monmart Bldg 5th Floor<br>3-18-5 Meieki Nakamura, Nagoya, Japan]]></title>
-                    <sortOrder><![CDATA[1]]></sortOrder>
-                    <description />
-                </record>
-                <record>
-                    <id><![CDATA[7]]></id>
-                    <linkTitle><![CDATA[TEL]]></linkTitle>
-                    <title><![CDATA[+81-3-0000-0000]]></title>
-                    <sortOrder><![CDATA[2]]></sortOrder>
-                    <description />
-                </record>
-                <record>
-                    <id><![CDATA[8]]></id>
-                    <linkTitle><![CDATA[Services]]></linkTitle>
-                    <title />
-                    <sortOrder><![CDATA[3]]></sortOrder>
-                    <description><![CDATA[<ul><li>Web Design</li><li>Print Design</li><li>Event Production</li><li>Eating Japanese curry rice</li></ul>]]></description>
-                </record>
-            </data>
-        </block>
+              <data table="btFaq">
+                  <record>
+                      <blockTitle />
+                  </record>
+              </data>
+              <data table="btFaqEntries">
+                  <record>
+                      <id><![CDATA[5]]></id>
+                      <linkTitle><![CDATA[会社名]]></linkTitle>
+                      <title><![CDATA[concrete5 日本ユーザーグループ]]></title>
+                      <sortOrder><![CDATA[0]]></sortOrder>
+                      <description />
+                  </record>
+                  <record>
+                      <id><![CDATA[6]]></id>
+                      <linkTitle><![CDATA[住所]]></linkTitle>
+                      <title><![CDATA[名古屋市中村区名駅3-18-5 モンマートビル5F (ベースキャンプ名古屋内)]]></title>
+                      <sortOrder><![CDATA[1]]></sortOrder>
+                      <description />
+                  </record>
+                  <record>
+                      <id><![CDATA[7]]></id>
+                      <linkTitle><![CDATA[TEL]]></linkTitle>
+                      <title><![CDATA[03-0000-0000]]></title>
+                      <sortOrder><![CDATA[2]]></sortOrder>
+                      <description />
+                  </record>
+                  <record>
+                      <id><![CDATA[8]]></id>
+                      <linkTitle><![CDATA[事業内容]]></linkTitle>
+                      <title />
+                      <sortOrder><![CDATA[3]]></sortOrder>
+                      <description><![CDATA[<ul><li>ホームページ制作</li><li>デザイン</li><li>イベント運営</li><li>カレーを食べる</li></ul>]]></description>
+                  </record>
+              </data>
+          </block>
         </blocks>
       </area>
     </page>
-    <page name="Access" path="/about/access" filename="" pagetype="page" template="full" user="admin" description="" package="">
+    <page name="アクセス" path="/about/access" filename="" pagetype="page" template="full" user="admin" description="" package="">
       <area name="Main">
         <blocks>
           <block type="content" name="">
             <data table="btContentLocal">
               <record>
-                <content><![CDATA[<h1 class="page-title">Access</h1><p>Direction to our company office</p>]]></content>
+                <content><![CDATA[<h1 class="page-title">アクセス</h1><p>アクセスをご紹介します。</p>]]></content>
               </record>
             </data>
           </block>
@@ -684,26 +684,26 @@
         </blocks>
       </area>
     </page>
-    <page name="Services" path="/services" filename="" pagetype="page" template="full" user="admin" description="" package="">
+    <page name="紹介" path="/introduction" filename="" pagetype="page" template="full" user="admin" description="" package="">
       <area name="Main">
         <blocks>
           <block type="content" name="">
             <data table="btContentLocal">
               <record>
-                <content><![CDATA[<h1 class="page-title">Services</h1><p>Our Services and products.</p><h3>Our Products</h3><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.</p>]]></content>
+                <content><![CDATA[<h1 class="page-title">紹介</h1><p>会社の製品、サービスやお店の商品などをご紹介します。</p><h3>見出しがはいります</h3><p>ここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいります</p>]]></content>
               </record>
             </data>
           </block>
         </blocks>
       </area>
     </page>
-    <page name="Contact" path="/contact" filename="" pagetype="page" template="full" user="admin" description="" package="">
+    <page name="お問い合わせ" path="/contact" filename="" pagetype="page" template="full" user="admin" description="" package="">
       <area name="Main">
         <blocks>
           <block type="content" name="">
             <data table="btContentLocal">
               <record>
-                <content><![CDATA[<h1 class="page-title">Contact</h1><p>Please send your comments and inquiries are on top of the fill in the necessary information from here on our site.</p>]]></content>
+                <content><![CDATA[<h1 class="page-title">お問い合わせ</h1><p>当サイトに関するご意見・お問い合わせはこちらから必要事項を記入の上送信ください。</p>]]></content>
               </record>
             </data>
           </block>
@@ -752,7 +752,7 @@
                 <qID><![CDATA[31]]></qID>
                 <msqID><![CDATA[1]]></msqID>
                 <questionSetId><![CDATA[1412889048]]></questionSetId>
-                <question><![CDATA[name]]></question>
+                <question><![CDATA[お名前]]></question>
                 <inputType><![CDATA[field]]></inputType>
                 <options><![CDATA[]]></options>
                 <position><![CDATA[0]]></position>
@@ -776,7 +776,7 @@
                 <qID><![CDATA[34]]></qID>
                 <msqID><![CDATA[4]]></msqID>
                 <questionSetId><![CDATA[1412889048]]></questionSetId>
-                <question><![CDATA[message]]></question>
+                <question><![CDATA[メッセージ]]></question>
                 <inputType><![CDATA[text]]></inputType>
                 <options><![CDATA[]]></options>
                 <position><![CDATA[0]]></position>
@@ -789,10 +789,10 @@
         </blocks>
       </area>
     </page>
-    <page name="News" path="/news" filename="" pagetype="page" template="right_sidebar" user="admin" description="" package="">
+    <page name="新着情報" path="/news" filename="" pagetype="page" template="right_sidebar" user="admin" description="" package="">
       <area name="Main">
       	<blocks>
-	        <block type="page_list" name="" custom-template="default_list">
+	        <block type="page_list" name="" custom-template="default_list" mc-block-id="b">
 	            <data table="btPageList">
 	                <record>
 	                    <num><![CDATA[3]]></num>
@@ -804,7 +804,7 @@
 	                    <includeDescription><![CDATA[0]]></includeDescription>
                       <enableExternalFiltering><![CDATA[1]]></enableExternalFiltering>
 	                    <ptID>{ccm:export:pagetype:news}</ptID>
-	                    <pageListTitle>Lates News</pageListTitle>
+	                    <pageListTitle>新着情報</pageListTitle>
 	                </record>
 	            </data>
 	        </block>
@@ -838,13 +838,13 @@
         </blocks>
     </area>
     </page>
-    <page name="Hello World" path="/news/news1" public-date="2015-02-14 15:30:00" filename="" pagetype="news" template="right_sidebar" user="admin" description="Here Hello World of description is entered" package="">
+    <page name="Hello World" path="/news/news1" public-date="2015-02-14 15:30:00" filename="" pagetype="news" template="right_sidebar" user="admin" description="ここにHello Worldの説明がはいります" package="">
       <attributes>
         <attributekey handle="news_topics">
           <topics>
-            <topic>/New Products</topic>
-            <topic>/Deals</topic>
-            <topic>/Business Hours</topic>
+            <topic>/新商品</topic>
+            <topic>/お得情報</topic>
+            <topic>/臨時休業のお知らせ</topic>
           </topics>
         </attributekey>
       </attributes>
@@ -853,7 +853,7 @@
           <block type="content" name="">
             <data table="btContentLocal">
               <record>
-                <content><![CDATA[<h1 class="page-title">Hello World</h1><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus,</p><h2>Heading 2</h2><h3>Heading 3</h3><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,</p><div>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa</div><table><tr><th>item name</th><td>Content is entered</td></tr><tr><th>item name</th><td>Content is entered</td></tr></table>]]></content>
+                <content><![CDATA[<h1 class="page-title">Hello World</h1><p>ここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいります</p><h2>見出し2</h2><h3>見出し3</h3><p>段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落</p><div>div要素div要素div要素div要素div要素div要素div要素div要素</div><table><tr><th>項目名</th><td>内容がはいります</td></tr><tr><th>項目名</th><td>内容がはいります</td></tr></table>]]></content>
               </record>
             </data>
           </block>
@@ -879,11 +879,11 @@
           </blocks>
       </area>
     </page>
-    <page name="Hello World2" path="/news/news2" public-date="2015-02-14 15:30:00" filename="" pagetype="news" template="right_sidebar" user="admin" description="description of  World Hello" package="">
+    <page name="Hello World2" path="/news/news2" public-date="2015-02-14 15:30:00" filename="" pagetype="news" template="right_sidebar" user="admin" description="ここにHello Worldの説明がはいります" package="">
       <attributes>
         <attributekey handle="news_topics">
           <topics>
-            <topic>/New products</topic>
+            <topic>/新商品</topic>
           </topics>
         </attributekey>
       </attributes>
@@ -892,7 +892,7 @@
           <block type="content" name="">
             <data table="btContentLocal">
               <record>
-                <content><![CDATA[<h1 class="page-title">Hello World</h1><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus,</p><h2>Heading 2</h2><h3>Heading 3</h3><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,</p><div>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa</div><table><tr><th>item name</th><td>Content is entered</td></tr><tr><th>item name</th><td>Content is entered</td></tr></table>]]></content>
+                <content><![CDATA[<h1 class="page-title">Hello World</h1><p>ここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいります</p><h2>見出し2</h2><h3>見出し3</h3><p>段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落</p><div>div要素div要素div要素div要素div要素div要素div要素div要素</div><table><tr><th>項目名</th><td>内容がはいります</td></tr><tr><th>項目名</th><td>内容がはいります</td></tr></table>]]></content>
               </record>
             </data>
           </block>
@@ -918,11 +918,11 @@
           </blocks>
       </area>
     </page>
-    <page name="Hello World3" path="/news/news3" public-date="2015-02-14 15:30:00" filename="" pagetype="news" template="right_sidebar" user="admin" description="Here Hello World of description is entered" package="">
+    <page name="Hello World3" path="/news/news3" public-date="2015-02-14 15:30:00" filename="" pagetype="news" template="right_sidebar" user="admin" description="ここにHello Worldの説明がはいります" package="">
       <attributes>
         <attributekey handle="news_topics">
           <topics>
-            <topic>/Deals</topic>
+            <topic>/お得情報</topic>
           </topics>
         </attributekey>
       </attributes>
@@ -931,7 +931,7 @@
           <block type="content" name="">
             <data table="btContentLocal">
               <record>
-                <content><![CDATA[<h1 class="page-title">Hello World</h1><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus,</p><h2>Heading 2</h2><h3>Heading 3</h3><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,</p><div>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa</div><table><tr><th>item name</th><td>Content is entered</td></tr><tr><th>item name</th><td>Content is entered</td></tr></table>]]></content>
+                <content><![CDATA[<h1 class="page-title">Hello World</h1><p>ここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいります</p><h2>見出し2</h2><h3>見出し3</h3><p>段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落</p><div>div要素div要素div要素div要素div要素div要素div要素div要素</div><table><tr><th>項目名</th><td>内容がはいります</td></tr><tr><th>項目名</th><td>内容がはいります</td></tr></table>]]></content>
               </record>
             </data>
           </block>
@@ -957,11 +957,11 @@
           </blocks>
       </area>
     </page>
-    <page name="Hello World3" path="/news/news3" public-date="2015-02-14 15:30:00" filename="" pagetype="news" template="right_sidebar" user="admin" description="description Hello World" package="">
+    <page name="Hello World3" path="/news/news3" public-date="2015-02-14 15:30:00" filename="" pagetype="news" template="right_sidebar" user="admin" description="ここにHello Worldの説明がはいります" package="">
       <attributes>
         <attributekey handle="news_topics">
           <topics>
-            <topic>/Business Hours</topic>
+            <topic>/臨時休業のお知らせ</topic>
           </topics>
         </attributekey>
       </attributes>
@@ -970,7 +970,7 @@
           <block type="content" name="">
             <data table="btContentLocal">
               <record>
-                <content><![CDATA[<h1 class="page-title">Hello World</h1><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</p><h2>Heading 2</h2><h3>Heading 3</h3><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</p><div>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</div><table><tr><th>Item name</th><td>Aenean commodo ligula eget dolor.</td></tr><tr><th>Item name</th><td>Aenean commodo ligula eget dolor.</td></tr></table>]]></content>
+                <content><![CDATA[<h1 class="page-title">Hello World</h1><p>ここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいります</p><h2>見出し2</h2><h3>見出し3</h3><p>段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落</p><div>div要素div要素div要素div要素div要素div要素div要素div要素</div><table><tr><th>項目名</th><td>内容がはいります</td></tr><tr><th>項目名</th><td>内容がはいります</td></tr></table>]]></content>
               </record>
             </data>
           </block>
@@ -996,12 +996,12 @@
           </blocks>
       </area>
     </page>
-    <page name="Hello World4" path="/news/news4" public-date="2015-02-14 15:30:00" filename="" pagetype="news" template="right_sidebar" user="admin" description="description of Hello World" package="">
+    <page name="Hello World4" path="/news/news4" public-date="2015-02-14 15:30:00" filename="" pagetype="news" template="right_sidebar" user="admin" description="ここにHello Worldの説明がはいります" package="">
       <attributes>
         <attributekey handle="news_topics">
           <topics>
-            <topic>/New Products</topic>
-            <topic>/Business Hours</topic>
+            <topic>/新商品</topic>
+            <topic>/臨時休業のお知らせ</topic>
           </topics>
         </attributekey>
       </attributes>
@@ -1010,7 +1010,7 @@
           <block type="content" name="">
             <data table="btContentLocal">
               <record>
-                <content><![CDATA[<h1 class="page-title">Hello World</h1><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</p><h2>Heading 2</h2><h3>Heading 3</h3><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</p><div>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</div><table><tr><th>Item name</th><td>Aenean commodo ligula eget dolor. Aenean massa.</td></tr><tr><th>Item name</th><td>Aenean commodo ligula eget dolor. Aenean massa.</td></tr></table>]]></content>
+                <content><![CDATA[<h1 class="page-title">Hello World</h1><p>ここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいります</p><h2>見出し2</h2><h3>見出し3</h3><p>段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落</p><div>div要素div要素div要素div要素div要素div要素div要素div要素</div><table><tr><th>項目名</th><td>内容がはいります</td></tr><tr><th>項目名</th><td>内容がはいります</td></tr></table>]]></content>
               </record>
             </data>
           </block>
@@ -1042,11 +1042,11 @@
           <block type="content" name="">
             <data table="btContentLocal">
               <record>
-                <content><![CDATA[<h1 class="page-title">Blog</h1>]]></content>
+                <content><![CDATA[<h1 class="page-title">ブログ</h1>]]></content>
               </record>
             </data>
           </block>
-          <block type="page_list" name="">
+          <block type="page_list" name="" mc-block-id="b">
               <data table="btPageList">
                   <record>
                       <num><![CDATA[3]]></num>
@@ -1083,7 +1083,7 @@
         </blocks>
       </area>
     </page>
-        <page name="Hello World!" public-date="2015-02-01 12:00:00" path="/blog/hello-world" filename="" pagetype="blog" template="right_sidebar" user="admin" description="description of hallo world" package="">
+        <page name="Hello World!" public-date="2015-02-01 12:00:00" path="/blog/hello-world" filename="" pagetype="blog" template="right_sidebar" user="admin" description="ここにHello Worldの説明がはいります" package="">
             <attributes>
                 <attributekey handle="blog_entry_topics">
                     <topics>
@@ -1096,7 +1096,7 @@
                     <block type="content" name="">
                         <data table="btContentLocal">
                             <record>
-                                <content><![CDATA[<h1 class="page-title">Hello World</h1><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</p><h2>Heading 2</h2><h3>Heading 3</h3><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</p><div>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</div><table><tr><th>Item name</th><td>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p><div>Lorem ipsum dolor sit amet, consectetuer adipiscing elit</td></tr><tr><th>Item name</th><td>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</td></tr></table>]]></content>
+                                <content><![CDATA[<h1 class="page-title">Hello World</h1><p>ここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいりますここに内容がはいります</p><h2>見出し2</h2><h3>見出し3</h3><p>段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落</p><div>div要素div要素div要素div要素div要素div要素div要素div要素</div><table><tr><th>項目名</th><td>内容がはいります</td></tr><tr><th>項目名</th><td>内容がはいります</td></tr></table>]]></content>
                             </record>
                         </data>
                     </block>
@@ -1167,9 +1167,9 @@
     </sociallinks>
     <trees>
     <tree type="topic" name="News">
-        <topic name="New Products"/>
-        <topic name="Deals"/>
-        <topic name="Business Hours"/>
+        <topic name="新商品"/>
+        <topic name="お得情報"/>
+        <topic name="臨時休業のお知らせ"/>
     </tree>
     </trees>
 </concrete5-cif>
